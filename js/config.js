@@ -3,6 +3,15 @@
  * WhatsApp: alleen cijfers, landcode zonder + (bijv. 31612345678).
  */
 window.CHANA_SITE = {
+  /**
+   * Bouwfase: zet op false als de site openbaar live gaat.
+   * Gebruikersnaam/wachtwoord staan hier voor het formulier; niet op het scherm getoond.
+   * (In publieke code is dit geen echte beveiliging — alleen een drempel.)
+   */
+  previewLock: true,
+  previewUser: "Chana",
+  previewPass: "ChayHana03!",
+
   whatsappPhone: "31600000000",
   /** Optioneel apart nummer voor bellen; anders wordt whatsappPhone gebruikt. */
   phoneTelDigits: "",

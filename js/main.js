@@ -1,5 +1,65 @@
 (function () {
   const cfg = window.CHANA_SITE || {};
+  const PREVIEW_SESSION_KEY = "chl_preview_unlock_v1";
+
+  function initPreviewGate() {
+    if (!cfg.previewLock) return;
+    if (sessionStorage.getItem(PREVIEW_SESSION_KEY) === "1") return;
+
+    function mount() {
+      if (document.getElementById("chl-preview-gate")) return;
+      const user = String(cfg.previewUser || "").trim();
+      const pass = String(cfg.previewPass || "");
+      const wrap = document.createElement("div");
+      wrap.id = "chl-preview-gate";
+      wrap.setAttribute("role", "dialog");
+      wrap.setAttribute("aria-modal", "true");
+      wrap.setAttribute("aria-labelledby", "chl-preview-title");
+      wrap.style.cssText =
+        "position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:rgba(26,22,24,.88);backdrop-filter:blur(6px);font-family:Outfit,system-ui,sans-serif;";
+      wrap.innerHTML = `
+        <div style="max-width:26rem;width:100%;background:#fffaf8;border:1px solid rgba(199,162,168,.45);border-radius:16px;padding:1.75rem 1.5rem;box-shadow:0 18px 48px rgba(26,22,24,.2);color:#2b2225;">
+          <h1 id="chl-preview-title" style="margin:0 0 .5rem;font-size:1.25rem;font-weight:600;font-family:'Cormorant Garamond',Georgia,serif;">Website tijdelijk niet openbaar</h1>
+          <p style="margin:0 0 1rem;font-size:.95rem;line-height:1.5;opacity:.92;">We zijn nog bezig met de site. Heb je toegang gekregen? Log hieronder in. Geen gegevens? Neem contact op met Chana Beauty Lounge.</p>
+          <form id="chl-preview-form" style="display:grid;gap:.75rem;">
+            <label style="display:grid;gap:.25rem;font-size:.85rem;">
+              Gebruikersnaam
+              <input name="u" autocomplete="username" required style="padding:.55rem .75rem;border:1px solid rgba(199,162,168,.5);border-radius:10px;font:inherit;" />
+            </label>
+            <label style="display:grid;gap:.25rem;font-size:.85rem;">
+              Wachtwoord
+              <input name="p" type="password" autocomplete="current-password" required style="padding:.55rem .75rem;border:1px solid rgba(199,162,168,.5);border-radius:10px;font:inherit;" />
+            </label>
+            <p id="chl-preview-err" style="display:none;margin:0;font-size:.85rem;color:#9b2c3a;"></p>
+            <button type="submit" style="margin-top:.25rem;padding:.65rem 1rem;border:none;border-radius:999px;background:#7d4f56;color:#fff;font:inherit;font-weight:600;cursor:pointer;">Site openen</button>
+          </form>
+        </div>`;
+      document.body.appendChild(wrap);
+      document.body.style.overflow = "hidden";
+
+      const form = wrap.querySelector("#chl-preview-form");
+      const err = wrap.querySelector("#chl-preview-err");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const u = String(fd.get("u") || "").trim();
+        const p = String(fd.get("p") || "");
+        if (u === user && p === pass) {
+          sessionStorage.setItem(PREVIEW_SESSION_KEY, "1");
+          wrap.remove();
+          document.body.style.overflow = "";
+        } else {
+          err.style.display = "block";
+          err.textContent = "Dat hoort niet bij elkaar. Probeer opnieuw.";
+        }
+      });
+    }
+
+    if (document.body) mount();
+    else document.addEventListener("DOMContentLoaded", mount, { once: true });
+  }
+
+  initPreviewGate();
 
   function waLink(text) {
     const phone = (cfg.whatsappPhone || "").replace(/\D/g, "");
