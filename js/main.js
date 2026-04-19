@@ -1,0 +1,307 @@
+(function () {
+  const cfg = window.CHANA_SITE || {};
+
+  function waLink(text) {
+    const phone = (cfg.whatsappPhone || "").replace(/\D/g, "");
+    const msg = encodeURIComponent(text || cfg.defaultWaText || "");
+    return phone ? `https://wa.me/${phone}?text=${msg}` : "#";
+  }
+
+  function initNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+    const overlay = document.querySelector(".nav-overlay");
+    if (!toggle || !nav) return;
+
+    function close() {
+      nav.classList.remove("is-open");
+      overlay?.classList.remove("is-visible");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    function open() {
+      nav.classList.add("is-open");
+      overlay?.classList.add("is-visible");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    toggle.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) close();
+      else open();
+    });
+
+    overlay?.addEventListener("click", close);
+
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 899px)").matches) close();
+      });
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+
+  function initWaLinks() {
+    document.querySelectorAll("[data-wa]").forEach((el) => {
+      const custom = el.getAttribute("data-wa-text");
+      el.setAttribute("href", waLink(custom || undefined));
+      if (el.getAttribute("href") === "#") {
+        el.addEventListener("click", (e) => e.preventDefault());
+      }
+    });
+  }
+
+  function telHref() {
+    const digits = String(cfg.phoneTelDigits || cfg.whatsappPhone || "").replace(
+      /\D/g,
+      ""
+    );
+    return digits ? `tel:+${digits}` : "#";
+  }
+
+  function initContactInject() {
+    document.querySelectorAll("[data-contact-phone]").forEach((n) => {
+      n.textContent = cfg.phoneDisplay || "";
+    });
+    document.querySelectorAll("a[data-contact-tel]").forEach((a) => {
+      a.setAttribute("href", telHref());
+    });
+    document.querySelectorAll("a[data-contact-email], a[data-email-card]").forEach((n) => {
+      const em = cfg.email || "";
+      if (n.tagName === "A") n.href = em ? `mailto:${em}` : "#";
+    });
+    document.querySelectorAll("[data-email-text]").forEach((n) => {
+      n.textContent = cfg.email || "";
+    });
+    document.querySelectorAll("[data-contact-instagram]").forEach((n) => {
+      const url = cfg.instagramUrl || "#";
+      if (n.tagName === "A") n.href = url;
+    });
+  }
+
+  function initForm() {
+    const form = document.getElementById("aanvraag-form");
+    const success = document.getElementById("form-success");
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const lines = [
+        `Naam: ${fd.get("naam") || ""}`,
+        `Telefoon: ${fd.get("telefoon") || ""}`,
+        `E-mail: ${fd.get("email") || ""}`,
+        `Behandeling: ${fd.get("behandeling") || ""}`,
+        `Voorkeursdatum: ${fd.get("datum") || ""}`,
+        `Voorkeurstijd: ${fd.get("tijd") || ""}`,
+        `Opmerking: ${fd.get("opmerking") || ""}`,
+      ];
+      const subject = encodeURIComponent("Afspraakaanvraag — Chana Beauty Lounge");
+      const body = encodeURIComponent(lines.join("\n"));
+      const mail = cfg.email || "";
+      if (mail) {
+        window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+      }
+      form.reset();
+      success?.classList.add("is-visible");
+      success?.setAttribute("tabindex", "-1");
+      success?.focus();
+    });
+  }
+
+  function initTreatmentPage() {
+    const page = document.querySelector('[data-page="behandelingen"]');
+    if (!page) return;
+
+    const sections = Array.from(document.querySelectorAll(".treatment-cat[data-category]"));
+    const filterLinks = Array.from(document.querySelectorAll("[data-show-category]"));
+    const showAllBtn = document.querySelector("[data-show-all-categories]");
+    const activeLabel = document.querySelector("[data-active-category-label]");
+
+    if (!sections.length) return;
+
+    const allowed = new Set(sections.map((s) => s.getAttribute("data-category")));
+
+    function titleFor(category) {
+      const sec = sections.find((s) => s.getAttribute("data-category") === category);
+      return sec?.querySelector("h2")?.textContent?.trim() || category;
+    }
+
+    function updateNav(category) {
+      filterLinks.forEach((link) => {
+        const key = link.getAttribute("data-show-category");
+        link.classList.toggle("is-active", key === category);
+      });
+      if (!activeLabel) return;
+      if (!category) {
+        activeLabel.textContent = "";
+      } else {
+        activeLabel.textContent = `Je bekijkt nu alleen: ${titleFor(category)}.`;
+      }
+    }
+
+    function applyFilter(category) {
+      sections.forEach((sec) => {
+        const matches = !category || sec.getAttribute("data-category") === category;
+        sec.classList.toggle("is-hidden", !matches);
+      });
+      showAllBtn?.classList.toggle("is-hidden", !category);
+      updateNav(category);
+    }
+
+    function categoryFromHash() {
+      const hash = window.location.hash.replace("#", "").trim();
+      return allowed.has(hash) ? hash : "";
+    }
+
+    filterLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const category = link.getAttribute("data-show-category") || "";
+        if (!allowed.has(category)) return;
+        history.replaceState(null, "", `#${category}`);
+        applyFilter(category);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    showAllBtn?.addEventListener("click", () => {
+      history.replaceState(null, "", window.location.pathname);
+      applyFilter("");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("hashchange", () => {
+      applyFilter(categoryFromHash());
+    });
+
+    applyFilter(categoryFromHash());
+  }
+
+  function initArrangementDetailPage() {
+    const page = document.querySelector('[data-page="arrangement-detail"]');
+    if (!page) return;
+
+    const titleEl = document.getElementById("arr-title");
+    const subtitleEl = document.getElementById("arr-subtitle");
+    const priceEl = document.getElementById("arr-price");
+    const descEl = document.getElementById("arr-description");
+    const imageEl = document.getElementById("arr-image");
+    const listEl = document.getElementById("arr-expect-list");
+
+    const map = {
+      "behandelingen-duo": {
+        title: "Behandelingen duo",
+        image: "arrangement%20pictures/Duoarrangement.png",
+        price: "Vanaf €149",
+        subtitle: "Samen ontspannen met persoonlijke aandacht",
+        description:
+          "Dit duo-arrangement is perfect voor twee personen die samen willen ontspannen en verzorgd willen worden in een rustige, luxe setting. We stemmen de invulling af op jullie wensen, zodat jullie allebei een behandeling krijgen die echt past.",
+        bullets: [
+          "Persoonlijke intake en afstemming per persoon",
+          "Duo-behandeling met focus op rust en comfort",
+          "Tijd om samen te ontspannen in een warme sfeer",
+          "Afsluiting met persoonlijk advies en nazorgtips",
+        ],
+      },
+      "duo-high-tea": {
+        title: "Behandelingen duo met mini high tea",
+        image: "arrangement%20pictures/duohightea.png",
+        price: "Vanaf €179",
+        subtitle: "Luxe duo-moment met een smaakvolle afsluiting",
+        description:
+          "Voor wie net dat beetje extra wil: een verzorgend duo-arrangement gecombineerd met een mini high tea. Ideaal voor een bijzonder verwenmoment samen of als luxe cadeau-ervaring.",
+        bullets: [
+          "Persoonlijke duo-behandeling in een ontspannen setting",
+          "Zorg, rust en aandacht voor beide personen",
+          "Mini high tea als luxe en gezellige afsluiting",
+          "Volledige beleving van ontvangst tot afronding",
+        ],
+      },
+      "zussen-spa-day": {
+        title: "Zussen spa day",
+        image: "arrangement%20pictures/zussenspa.png",
+        price: "Vanaf €149",
+        subtitle: "Een ontspannen dag om samen op te laden",
+        description:
+          "De zussen spa day is ontworpen voor quality time met je zus: samen ontspannen, genieten en verzorgd worden in een rustige en luxe omgeving. Een dag waarin beleving en verbinding centraal staan.",
+        bullets: [
+          "Rustig ontvangst en persoonlijke begeleiding",
+          "Verzorgende behandelingen afgestemd op jullie wensen",
+          "Focus op ontspanning, verbinding en comfort",
+          "Een dag die echt voelt als samen opladen",
+        ],
+      },
+      "moeder-dochter-spa-day": {
+        title: "Moeder dochter spa day",
+        image: "arrangement%20pictures/moederdochterspa.png",
+        price: "Vanaf €149",
+        subtitle: "Een bijzonder moment van aandacht en verbinding",
+        description:
+          "Dit arrangement draait om samen genieten en bewust vertragen. Een warme keuze voor moeder en dochter die een verzorgend, luxe en verbindend moment met elkaar willen beleven.",
+        bullets: [
+          "Persoonlijke intake voor moeder en dochter",
+          "Ontspannende en verzorgende behandeling op maat",
+          "Luxe sfeer met focus op comfort en beleving",
+          "Een waardevol moment om samen te delen",
+        ],
+      },
+      "vrienden-spa-day": {
+        title: "Vrienden spa day",
+        image: "arrangement%20pictures/vriendenspa.png",
+        price: "Vanaf €149",
+        subtitle: "Samen genieten van een complete spa-beleving",
+        description:
+          "Voor vriendinnen die een luxe en ontspannen uitje zoeken. De vrienden spa day combineert verzorging met gezelligheid, zodat jullie samen echt kunnen ontladen.",
+        bullets: [
+          "Duo- of vriendenmoment met behandelingen op maat",
+          "Ontspanning en verzorging in een warme setting",
+          "Tijd voor quality time zonder haast",
+          "Een ervaring die je samen bijblijft",
+        ],
+      },
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = params.get("arr") || "";
+    const fromHash = (window.location.hash || "").replace("#", "").trim();
+    const fromStore = sessionStorage.getItem("arrangementKey") || "";
+    const key = fromQuery || fromHash || fromStore;
+    const data = map[key] || map["behandelingen-duo"];
+
+    if (titleEl) titleEl.textContent = data.title;
+    if (subtitleEl) subtitleEl.textContent = data.subtitle;
+    if (priceEl) priceEl.textContent = data.price || "";
+    if (descEl) descEl.textContent = data.description;
+    if (imageEl) {
+      imageEl.src = data.image;
+      imageEl.alt = data.title;
+    }
+    if (listEl) {
+      listEl.innerHTML = data.bullets.map((b) => `<li>${b}</li>`).join("");
+    }
+  }
+
+  function initArrangementCards() {
+    document.querySelectorAll("[data-arr-key]").forEach((card) => {
+      card.addEventListener("click", () => {
+        const key = card.getAttribute("data-arr-key");
+        if (key) sessionStorage.setItem("arrangementKey", key);
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initNav();
+    initWaLinks();
+    initContactInject();
+    initForm();
+    initTreatmentPage();
+    initArrangementCards();
+    initArrangementDetailPage();
+  });
+})();
