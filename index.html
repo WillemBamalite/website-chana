@@ -5,35 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Chana Beauty Lounge — huidverbetering, head spa en luxe arrangementen op afspraak. Neem contact op via WhatsApp."
+      content="Chana Beauty Lounge — head spa, laserontharing en gezichtsbehandelingen. Luxe, rust en persoonlijke zorg op afspraak."
     />
-    <title>Chana Beauty Lounge | Huidverbetering, head spa &amp; arrangementen</title>
+    <title>Chana Beauty Lounge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-home page-lux">
     <a class="skip-link" href="#main">Naar inhoud</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="logo-link" href="index.html">
-          <img src="favicon-away-512x512 (1).png" width="200" height="80" alt="Chana Beauty Lounge" />
-          <span>Chana Beauty Lounge</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="site-nav" class="nav" aria-label="Hoofdmenu">
+    <div class="announce-bar">
+      Opening medio oktober 2026 · Chana Beauty Lounge
+    </div>
+
+    <header class="site-header site-header--lux">
+      <div class="container header-lux">
+        <div class="header-lux__brand">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="logo-link logo-link--lux" href="index.html">
+            <img
+              class="site-logo"
+              data-site-logo
+              src="logo-transparent.png"
+              width="320"
+              height="128"
+              alt="Chana Beauty Lounge"
+            />
+          </a>
+          <a class="btn btn--primary btn--header btn--header-compact" href="contact.html"
+            >Contact</a
+          >
+        </div>
+        <div class="header-lux__nav">
+          <nav class="nav-lux" aria-label="Hoofdmenu">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="behandelingen.html">Behandelingen</a>
+            <a href="arrangementen.html">Arrangementen</a>
+            <a href="over-ons.html">Over ons</a>
+            <a href="cadeaubon.html">Cadeaubon</a>
+          </nav>
+          <a class="btn btn--primary btn--header" href="contact.html">Contact</a>
+        </div>
+        <nav id="site-nav" class="nav" aria-label="Mobiel menu">
           <a href="index.html" aria-current="page">Home</a>
           <a href="behandelingen.html">Behandelingen</a>
           <a href="arrangementen.html">Arrangementen</a>
@@ -46,215 +71,360 @@
     <div class="nav-overlay" aria-hidden="true"></div>
 
     <main id="main">
-      <section class="home-hero section">
-        <div class="container centered-head">
-          <p class="u-badge">Welkom</p>
-          <div class="home-hero__logo">
-            <img src="favicon-away-512x512 (1).png" width="420" height="170" alt="Chana Beauty Lounge logo" />
+      <section class="lux-hero" aria-label="Intro">
+        <video
+          class="lux-hero__video"
+          data-hero-video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="picture/headspa.png"
+          aria-hidden="true"
+        ></video>
+        <div class="lux-hero__content container">
+          <h1 class="lux-hero__title">
+            Ervaar behandelingen met rust, aandacht en een gevoel van luxe — vanaf het moment dat je
+            binnenstapt bij Chana Beauty Lounge.
+          </h1>
+          <a class="lux-hero__scroll" href="#intro">Ontdek Chana Beauty Lounge</a>
+        </div>
+      </section>
+
+      <section class="chl-intro section" id="intro">
+        <div class="container chl-intro__grid" data-reveal>
+          <figure class="chl-intro__media">
+            <img
+              src="picture/gezichtsbehandeling.png"
+              alt="Gezichtsbehandeling bij Chana Beauty Lounge"
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </figure>
+          <div class="chl-intro__copy">
+            <p class="lux-kicker">Welkom</p>
+            <h2>Chana Beauty Lounge</h2>
+            <p>
+              Chana is de salon van Chayenne en Kythana. Hier combineren zij vakmanschap met
+              persoonlijke aandacht — in een elegante, warme setting waar je even mag landen.
+            </p>
+            <p>
+              Van een diepe head spa tot zorgvuldige laserontharing en gezichtsbehandelingen: elke
+              afspraak is afgestemd op jouw huid en jouw moment.
+            </p>
+            <a class="btn btn--outline" href="over-ons.html">Lees meer over ons</a>
           </div>
-          <h1>Chana Beauty Lounge</h1>
+        </div>
+      </section>
+
+      <section class="chl-pillars" aria-label="Uitgelichte behandelingen">
+        <div class="container chl-pillars__head" data-reveal>
+          <p class="lux-kicker lux-kicker--on-dark">Ontdek</p>
+          <h2 class="chl-pillars__title">Ons aanbod</h2>
+        </div>
+        <div class="container chl-pillars__grid" data-reveal>
+          <a class="chl-pillar" href="behandelingen.html#laser">
+            <div class="chl-pillar__img">
+              <img
+                src="picture/laserbehandeling.png"
+                alt=""
+                width="600"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <span class="chl-pillar__label">Laserontharing</span>
+          </a>
+          <a class="chl-pillar" href="behandelingen.html#headspa">
+            <div class="chl-pillar__img">
+              <img src="picture/headspa.png" alt="" width="600" height="800" loading="lazy" />
+            </div>
+            <span class="chl-pillar__label">Head Spa</span>
+          </a>
+          <a class="chl-pillar" href="behandelingen.html#gezicht">
+            <div class="chl-pillar__img">
+              <img
+                src="picture/gezichtsbehandeling.png"
+                alt=""
+                width="600"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <span class="chl-pillar__label">Gezichtsbehandelingen</span>
+          </a>
+          <a class="chl-pillar" href="behandelingen.html#brows">
+            <div class="chl-pillar__img">
+              <img
+                src="picture/wenkbrauwen.png"
+                alt=""
+                width="600"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <span class="chl-pillar__label">Wenkbrauwen &amp; wax</span>
+          </a>
+          <a class="chl-pillar" href="arrangementen.html">
+            <div class="chl-pillar__img">
+              <img
+                src="arrangement%20pictures/Duoarrangement.png"
+                alt=""
+                width="600"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <span class="chl-pillar__label">Arrangementen</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="chl-vision section section--alt">
+        <div class="container chl-vision__inner" data-reveal>
+          <p class="lux-kicker">Onze visie</p>
+          <h2>Lief voor je huid, helder in onze aanpak</h2>
           <p>
-            Huidverbetering, laser, head spa en luxe arrangementen op afspraak. Een moment voor
-            jezelf, in een warme en rustige sfeer.
+            Goede huidzorg begint bij luisteren. Wij nemen de tijd, leggen duidelijk uit en werken
+            met professionele apparatuur en producten waar we achter staan.
           </p>
-          <div class="btn-row" style="justify-content: center; margin-top: 1.2rem">
-            <a class="btn btn--primary" href="behandelingen.html">Bekijk behandelingen</a>
-            <a class="btn btn--outline" href="contact.html">Neem contact op</a>
-          </div>
-          <p class="u-muted" style="margin-top: 1rem">
-            Op afspraak • Persoonlijke aandacht • Rust &amp; luxe
+          <p>
+            Head spa draait om wellness en diepe ontspanning. Laserbehandelingen zijn ideaal als je
+            langdurig wilt genieten van een gladde huid — zorgvuldig, comfortabel en op maat.
           </p>
         </div>
       </section>
 
-      <section class="section section--alt">
-        <div class="container centered-head" style="max-width: 780px">
-          <h2>Ontdek onze wereld</h2>
-          <p>Van huid tot ontspanning — alles met dezelfde zachte zorg en rust.</p>
+      <section class="chl-treatments section" id="behandelingen">
+        <div class="container lux-section-head lux-section-head--center" data-reveal>
+          <p class="lux-kicker">Aanbod</p>
+          <h2>Onze behandelingen</h2>
+          <p>
+            Van laser en head spa tot gezicht, wenkbrauwen en arrangementen — altijd met aandacht
+            en vakmanschap.
+          </p>
         </div>
-        <div class="container">
-          <div class="card-grid card-grid--3">
-            <a class="card service-card card-link" href="behandelingen.html#gezicht">
-              <img
-                src="picture/gezichtsbehandeling.png"
-                alt="Gezichtsbehandeling"
-                width="700"
-                height="500"
-                loading="lazy"
-              />
-              <h3>Gezichtsbehandelingen</h3>
-              <p>Meer informatie en volledig aanbod.</p>
-            </a>
-            <a class="card service-card card-link" href="behandelingen.html#laser">
+
+        <article class="chl-feature" data-reveal>
+          <div class="container chl-feature__grid">
+            <figure class="chl-feature__media">
               <img
                 src="picture/laserbehandeling.png"
-                alt="Laserbehandelingen"
-                width="700"
-                height="500"
+                alt="Laserontharing"
+                width="900"
+                height="1000"
                 loading="lazy"
               />
-              <h3>Laserbehandelingen</h3>
-              <p>Veilig en zorgvuldig uitgevoerd op afspraak.</p>
-            </a>
-            <a class="card service-card card-link" href="behandelingen.html#brows">
-              <img
-                src="picture/wenkbrauwen.png"
-                alt="Wenkbrauwen en wax"
-                width="700"
-                height="500"
-                loading="lazy"
-              />
-              <h3>Wenkbrauwen &amp; wax</h3>
-              <p>Verzorgde details die jouw look compleet maken.</p>
-            </a>
-            <a class="card service-card card-link" href="behandelingen.html#headspa">
+            </figure>
+            <div class="chl-feature__copy">
+              <h3>Laserontharing</h3>
+              <p>
+                Zorgvuldige, effectieve ontharing met moderne apparatuur. We stemmen elke zone af op
+                jouw huid en wensen.
+              </p>
+              <a class="chl-text-link" href="behandelingen.html#laser">Bekijk laserontharing</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="chl-feature chl-feature--reverse" data-reveal>
+          <div class="container chl-feature__grid">
+            <figure class="chl-feature__media">
               <img
                 src="picture/headspa.png"
                 alt="Head spa behandeling"
-                width="700"
-                height="500"
+                width="900"
+                height="1000"
                 loading="lazy"
               />
+            </figure>
+            <div class="chl-feature__copy">
               <h3>Head Spa</h3>
-              <p>Diepe ontspanning voor hoofd, huid en zintuigen.</p>
-            </a>
-            <a class="card service-card card-link" href="arrangementen.html">
+              <p>
+                Diepe ontspanning voor hoofdhuid en haar. Een rustig ritueel met massage, warmte en
+                verzorging — ideaal om volledig te ontspannen.
+              </p>
+              <a class="chl-text-link" href="behandelingen.html#headspa">Bekijk head spa</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="chl-feature" data-reveal>
+          <div class="container chl-feature__grid">
+            <figure class="chl-feature__media">
+              <img
+                src="picture/gezichtsbehandeling.png"
+                alt="Gezichtsbehandeling"
+                width="900"
+                height="1000"
+                loading="lazy"
+              />
+            </figure>
+            <div class="chl-feature__copy">
+              <h3>Gezichtsbehandelingen</h3>
+              <p>
+                Huidverbetering met een persoonlijke aanpak. Reiniging, verzorging en advies — voor
+                een huid die er gezond en verzorgd uitziet.
+              </p>
+              <a class="chl-text-link" href="behandelingen.html#gezicht">Bekijk gezichtsbehandelingen</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="chl-feature chl-feature--reverse" data-reveal>
+          <div class="container chl-feature__grid">
+            <figure class="chl-feature__media">
+              <img
+                src="picture/wenkbrauwen.png"
+                alt="Wenkbrauwen en wax"
+                width="900"
+                height="1000"
+                loading="lazy"
+              />
+            </figure>
+            <div class="chl-feature__copy">
+              <h3>Wenkbrauwen &amp; wax</h3>
+              <p>
+                Vormgeving, henna en waxbehandelingen voor een verzorgde, natuurlijke look. We
+                kijken samen wat bij jouw gezicht past.
+              </p>
+              <a class="chl-text-link" href="behandelingen.html#brows">Bekijk wenkbrauwen &amp; wax</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="chl-feature" data-reveal>
+          <div class="container chl-feature__grid">
+            <figure class="chl-feature__media">
               <img
                 src="arrangement%20pictures/Duoarrangement.png"
-                alt="Arrangementen met duo moment"
-                width="700"
-                height="500"
+                alt="Duo-arrangement"
+                width="900"
+                height="1000"
                 loading="lazy"
               />
+            </figure>
+            <div class="chl-feature__copy">
               <h3>Arrangementen</h3>
-              <p>Meer informatie en volledig aanbod.</p>
-            </a>
-            <a class="card service-card card-link" href="cadeaubon.html">
-              <img
-                src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=80"
-                alt="Cadeaubonnen en cadeaupakketten"
-                width="700"
-                height="500"
-                loading="lazy"
-              />
-              <h3>Cadeaubonnen</h3>
-              <p>Geef ontspanning cadeau met bonnen en luxe pakketten.</p>
-            </a>
+              <p>
+                Duo-momenten en spa-ervaringen om samen te ontspannen — van zussen spa tot moeder &
+                dochter. Een bijzonder cadeau of quality time.
+              </p>
+              <a class="chl-text-link" href="arrangementen.html">Bekijk arrangementen</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="container chl-treatments__cta" data-reveal>
+          <a class="btn btn--primary" href="behandelingen.html">Alle behandelingen &amp; tarieven</a>
+        </div>
+      </section>
+
+      <section class="chl-about section section--dark">
+        <div class="chl-marquee" aria-hidden="true">
+          <div class="chl-marquee__track">
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+            <span>Chana Beauty Lounge</span>
+          </div>
+        </div>
+        <div class="container chl-about__grid" data-reveal>
+          <figure class="chl-about__media">
+            <img
+              src="arrangement%20pictures/zussenspa.png"
+              alt="Chayenne en Kythana"
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </figure>
+          <div class="chl-about__copy">
+            <p class="lux-kicker lux-kicker--light">Over ons</p>
+            <h2>Chayenne &amp; Kythana</h2>
+            <blockquote class="chl-quote">
+              <p>
+                “Jij bent bij ons geen nummer. We willen dat je je welkom voelt — en met een goed
+                gevoel naar buiten gaat.”
+              </p>
+            </blockquote>
+            <p>
+              Twee zussen met één duidelijke focus: beauty met warmte en professionaliteit. Samen
+              vormen zij het hart van Chana Beauty Lounge.
+            </p>
+            <a class="btn btn--outline btn--on-dark" href="over-ons.html">Meer over ons</a>
           </div>
         </div>
       </section>
 
-      <section class="section section--alt">
-        <div class="container centered-head">
-          <h2>Waarom kiezen voor ons</h2>
-        </div>
-        <div class="container feature-grid">
-          <div class="feature">
-            <h3>Persoonlijke aandacht</h3>
-            <p>Iedere behandeling stemmen we af op jouw huid, wensen en comfort.</p>
+      <section class="chl-benefits section">
+        <div class="container" data-reveal>
+          <div class="lux-section-head lux-section-head--center">
+            <p class="lux-kicker">Waarom Chana</p>
+            <h2>Jouw moment van rust</h2>
+            <p>Bij Chana draait alles om kwaliteit, persoonlijke aandacht en een warme ontvangst.</p>
           </div>
-          <div class="feature">
-            <h3>Werken op afspraak</h3>
-            <p>Rust en ruimte voor jou: geen haast, wel een serene ervaring.</p>
-          </div>
-          <div class="feature">
-            <h3>Luxe en rustgevende sfeer</h3>
-            <p>Een warme omgeving waarin je echt kunt loslaten.</p>
-          </div>
-          <div class="feature">
-            <h3>Behandelingen op maat</h3>
-            <p>Van laser tot head spa: altijd met oog voor detail en resultaat.</p>
-          </div>
+          <ul class="chl-benefits__grid">
+            <li>Op afspraak</li>
+            <li>Persoonlijke aanpak</li>
+            <li>Professionele apparatuur</li>
+            <li>Rustige salon</li>
+            <li>Duidelijke uitleg</li>
+            <li>Warm welkom</li>
+          </ul>
         </div>
       </section>
 
-      <section class="section section--alt" id="over-ons">
-        <div class="container centered-head" style="max-width: 760px">
-          <h2>Over Chana Beauty Lounge</h2>
+      <section class="chl-cta section" id="contact">
+        <div class="container chl-cta__inner" data-reveal>
+          <h2>Maak een afspraak</h2>
           <p>
-            Persoonlijke aandacht, rust en kwaliteit staan centraal. Ontdek wie
-            <strong>Chayenne</strong> en <strong>Kythana</strong> zijn en hoe wij jouw
-            beauty-ervaring tot in de puntjes verzorgen.
+            Heb je een vraag of wil je weten welke behandeling bij je past? Neem gerust contact op —
+            we denken graag met je mee.
           </p>
-          <a class="btn btn--outline" href="over-ons.html">Lees meer</a>
-        </div>
-      </section>
-
-      <section class="section" id="reviews">
-        <div class="container centered-head">
-          <h2>Ervaringen</h2>
-          <p>Een glimp van wat klanten bij ons voelen — rust, vertrouwen en resultaat.</p>
-        </div>
-        <div class="container quote-grid">
-          <blockquote class="quote">
-            <p>“Zo rustig en professioneel. Mijn huid voelde daarna echt verzorgd en fris aan.”</p>
-            <footer>Sophie</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>“De sfeer is luxe en warm tegelijk, je voelt meteen dat er met aandacht wordt gewerkt.”</p>
-            <footer>Emma</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>“Het duo-arrangement was een cadeau aan onszelf. Alles klopte: van ontvangst tot nazorg.”</p>
-            <footer>Lisa</footer>
-          </blockquote>
-        </div>
-      </section>
-
-      <section class="section section--alt" id="faq">
-        <div class="container centered-head">
-          <h2>Veelgestelde vragen</h2>
-        </div>
-        <div class="container" style="max-width: 760px">
-          <div class="faq">
-            <details>
-              <summary>Hoe kan ik een afspraak maken?</summary>
-              <p>
-                Via WhatsApp, telefoon, e-mail of het aanvraagformulier. We nemen daarna persoonlijk
-                contact met je op.
-              </p>
-            </details>
-            <details>
-              <summary>Zijn er arrangementen voor twee personen?</summary>
-              <p>
-                Ja, we bieden duo-arrangementen en spa day opties voor zussen, moeder-dochter en
-                vriendinnen.
-              </p>
-            </details>
-            <details>
-              <summary>Verkopen jullie cadeaubonnen?</summary>
-              <p>
-                Ja, we hebben cadeau bonnen en cadeaupakketten. Neem contact op voor advies en
-                beschikbaarheid.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="container centered-head">
-          <h2>Neem contact op</h2>
-          <p>Volg ons op Instagram voor sfeer en updates, of stuur een bericht via WhatsApp.</p>
-          <div class="btn-row" style="justify-content: center; margin-top: 1.2rem">
-            <a class="btn btn--outline" href="contact.html">Neem contact op</a>
-            <a class="btn btn--outline" href="#" data-contact-instagram target="_blank" rel="noopener noreferrer">Instagram</a>
+          <div class="btn-row chl-cta__actions">
+            <a class="btn btn--primary" href="contact.html">Neem contact op</a>
+            <a class="btn btn--outline btn--on-dark" href="#" data-wa>WhatsApp</a>
+            <a class="btn btn--ghost btn--on-dark" href="cadeaubon.html">Cadeaubon</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <div class="chl-float" aria-label="Snelle acties">
+      <a href="contact.html">Maak afspraak</a>
+      <span class="chl-float__sep" aria-hidden="true"></span>
+      <a href="cadeaubon.html">Cadeaubon</a>
+    </div>
+
+    <footer class="site-footer site-footer--lux">
       <div class="container site-footer__grid">
-        <div>
-          <h3>Chana Beauty Lounge</h3>
+        <div class="site-footer__brand">
+          <img
+            data-site-logo
+            src="logo-transparent.png"
+            width="200"
+            height="80"
+            alt="Chana Beauty Lounge"
+          />
           <p>Huidverbetering, head spa &amp; luxe arrangementen — uitsluitend op afspraak.</p>
         </div>
         <div>
           <h3>Navigatie</h3>
           <ul>
+            <li><a href="index.html">Home</a></li>
             <li><a href="behandelingen.html">Behandelingen</a></li>
             <li><a href="arrangementen.html">Arrangementen</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
             <li><a href="cadeaubon.html">Cadeaubon</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -273,8 +443,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        © <span id="y"></span> Chana Beauty Lounge. Geen online boeking — alleen contact &amp;
-        beleving.
+        © <span id="y"></span> Chana Beauty Lounge
       </div>
     </footer>
 

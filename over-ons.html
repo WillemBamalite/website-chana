@@ -16,24 +16,44 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-lux page-over-ons">
     <a class="skip-link" href="#main">Naar inhoud</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="logo-link" href="index.html">
-          <img src="favicon-away-512x512 (1).png" width="200" height="80" alt="Chana Beauty Lounge" />
-          <span>Chana Beauty Lounge</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="site-nav" class="nav" aria-label="Hoofdmenu">
+    <div class="announce-bar">Opening medio oktober 2026 · Chana Beauty Lounge</div>
+    <header class="site-header site-header--lux">
+      <div class="container header-lux">
+        <div class="header-lux__brand">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="logo-link logo-link--lux" href="index.html">
+            <img
+              class="site-logo"
+              data-site-logo
+              src="logo-transparent.png"
+              width="320"
+              height="128"
+              alt="Chana Beauty Lounge"
+            />
+          </a>
+          <a class="btn btn--primary btn--header btn--header-compact" href="contact.html">Contact</a>
+        </div>
+        <div class="header-lux__nav">
+          <nav class="nav-lux" aria-label="Hoofdmenu">
+            <a href="index.html">Home</a>
+            <a href="behandelingen.html">Behandelingen</a>
+            <a href="arrangementen.html">Arrangementen</a>
+            <a href="over-ons.html" aria-current="page">Over ons</a>
+            <a href="cadeaubon.html">Cadeaubon</a>
+          </nav>
+          <a class="btn btn--primary btn--header" href="contact.html">Contact</a>
+        </div>
+        <nav id="site-nav" class="nav" aria-label="Mobiel menu">
           <a href="index.html">Home</a>
           <a href="behandelingen.html">Behandelingen</a>
           <a href="arrangementen.html">Arrangementen</a>
@@ -48,60 +68,91 @@
     <main id="main">
       <div class="page-hero section--alt">
         <div class="container">
-          <p class="u-badge">Persoonlijke aanpak</p>
+          <p class="lux-kicker">Het team</p>
           <h1>Over Chana Beauty Lounge</h1>
           <p>
-            Een plek waar luxe niet luid hoeft te zijn — waar rust, warmte en vakmanschap samenkomen.
+            Een plek waar rust, warmte en vakmanschap samenkomen — op afspraak, met persoonlijke
+            aandacht.
           </p>
         </div>
       </div>
 
       <section class="section">
-        <div class="container" style="max-width: 720px">
-          <h2>Ons verhaal</h2>
-          <p>
-            Wij zijn <strong>Chayenne (29)</strong> en <strong>Kythana (22)</strong>, twee zussen met
-            een gedeelde passie voor beauty, verzorging en het creeren van een plek waar mensen zich
-            echt goed voelen.
-          </p>
-          <p>
-            Met Chana beginnen we samen aan een nieuw hoofdstuk. We nemen de salon FraNas over, een
-            bestaande salon met opgebouwde ervaring. Tegelijkertijd bouwen we deze volledig om naar
-            onze eigen visie en stijl.
-          </p>
-          <h2>Chayenne &amp; Kythana</h2>
-          <p>
-            Door de overname van FraNas starten we met een sterke basis, waaronder de aanwezige
-            apparatuur. We werken met professionele apparatuur en bewezen behandelmethodes, en leveren
-            vanaf dag een kwaliteit die klanten direct ervaren.
-          </p>
-          <p>
-            Als zussen kennen we elkaar door en door en vullen we elkaar goed aan. Die samenwerking,
-            gecombineerd met onze motivatie en drive, zorgt ervoor dat we alles op alles zetten om van
-            Chana een succes te maken.
-          </p>
-          <h2>Waarom deze salon</h2>
-          <p>
-            Wij geloven dat een behandeling meer is dan alleen het resultaat. Het draait om aandacht,
-            vertrouwen en beleving. Klanten moeten zich op hun gemak voelen vanaf het moment dat ze
-            binnenkomen tot het moment dat ze weer naar buiten lopen.
-          </p>
-          <p>
-            Chana staat voor een nieuwe start: gebouwd op een bestaande basis, maar volledig met onze
-            eigen identiteit. We combineren ervaring, vakkennis en persoonlijke aandacht om elke klant
-            een behandeling op hoog niveau te bieden. Dit is voor ons nog maar het begin.
-          </p>
-          <div class="btn-row" style="margin-top: 2rem">
-            <a class="btn btn--outline" href="contact.html">Neem contact op</a>
+        <div class="container about-story__grid">
+          <figure class="about-story__media">
+            <img
+              src="arrangement%20pictures/zussenspa.png"
+              alt="Chayenne en Kythana — Chana Beauty Lounge"
+              width="900"
+              height="1100"
+              loading="lazy"
+            />
+          </figure>
+          <div class="about-story__copy">
+            <h2>Ons verhaal</h2>
+            <p>
+              Wij zijn <strong>Chayenne</strong> en <strong>Kythana</strong>, twee zussen met een
+              gedeelde passie voor beauty, verzorging en een plek waar mensen zich echt goed voelen.
+            </p>
+            <p>
+              Met Chana Beauty Lounge bouwen we samen aan onze eigen salon: een plek waar rust,
+              verzorging en professionaliteit samenkomen.
+            </p>
+            <blockquote class="chl-quote about-story__quote">
+              <p>
+                “Jij bent bij ons geen nummer. We willen dat je je welkom voelt — en met een goed
+                gevoel naar buiten gaat.”
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container about-panels">
+          <article class="about-panel">
+            <p class="lux-kicker">Chayenne &amp; Kythana</p>
+            <h2>Samen sterker</h2>
+            <p>
+              We werken met professionele apparatuur en bewezen behandelmethodes. Als zussen kennen
+              we elkaar door en door en vullen we elkaar goed aan — die samenwerking merk je in elke
+              behandeling.
+            </p>
+          </article>
+          <article class="about-panel">
+            <p class="lux-kicker">Onze aanpak</p>
+            <h2>Meer dan een behandeling</h2>
+            <p>
+              Een behandeling draait bij ons om aandacht, vertrouwen en beleving. Van het moment dat
+              je binnenkomt tot je weer naar buiten loopt — rustig, duidelijk en persoonlijk.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about-cta">
+        <div class="container about-cta__inner">
+          <h2>Kennismaken?</h2>
+          <p>Neem gerust contact op — we helpen je graag verder.</p>
+          <div class="btn-row about-cta__actions">
+            <a class="btn btn--primary" href="contact.html">Neem contact op</a>
+            <a class="btn btn--outline" href="#" data-wa>WhatsApp</a>
+            <a class="btn btn--ghost" href="behandelingen.html">Bekijk behandelingen</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--lux">
       <div class="container site-footer__grid">
-        <div>
-          <h3>Chana Beauty Lounge</h3>
+        <div class="site-footer__brand">
+          <img
+            data-site-logo
+            src="logo-transparent.png"
+            width="200"
+            height="80"
+            alt="Chana Beauty Lounge"
+          />
           <p>Huidverbetering, head spa &amp; luxe arrangementen — uitsluitend op afspraak.</p>
         </div>
         <div>
@@ -128,8 +179,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        © <span id="y"></span> Chana Beauty Lounge. Geen online boeking — alleen contact &amp;
-        beleving.
+        © <span id="y"></span> Chana Beauty Lounge
       </div>
     </footer>
 

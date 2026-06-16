@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="841mm" height="1189mm" viewBox="0 0 841 1189">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffdf9"/>
+      <stop offset="100%" stop-color="#f7f4ef"/>
+    </linearGradient>
+    <linearGradient id="banner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3d4f3d"/>
+      <stop offset="100%" stop-color="#5a6e58"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="12" flood-color="#2a2a28" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .display { font-family: "Georgia", "Times New Roman", serif; }
+      .body { font-family: "Arial", "Helvetica", sans-serif; }
+      .olive { fill: #3d4f3d; }
+      .muted { fill: #5c5a56; }
+      .gold { fill: #c9a962; }
+      .white { fill: #ffffff; }
+    </style>
+    <clipPath id="faceClip"><rect x="56" y="608" width="232" height="230" rx="26"/></clipPath>
+    <clipPath id="laserClip"><rect x="305" y="608" width="232" height="230" rx="26"/></clipPath>
+    <clipPath id="headspaClip"><rect x="554" y="608" width="232" height="230" rx="26"/></clipPath>
+  </defs>
+
+  <rect x="0" y="0" width="841" height="1189" fill="url(#bg)"/>
+  <circle cx="740" cy="120" r="150" fill="#e8c4c8" opacity="0.22"/>
+  <circle cx="84" cy="1060" r="130" fill="#dcc9a0" opacity="0.18"/>
+  <circle cx="120" cy="110" r="95" fill="#e8c4c8" opacity="0.18"/>
+
+  <rect x="42" y="46" width="757" height="300" rx="30" fill="url(#banner)" filter="url(#shadow)"/>
+
+  <rect x="120" y="78" width="600" height="100" rx="14" fill="#ffffff" opacity="0.98"/>
+  <image href="../logo-transparent.png" x="170" y="86" width="500" height="84" preserveAspectRatio="xMidYMid meet"/>
+
+  <text x="420" y="224" text-anchor="middle" class="display white" font-size="66" font-weight="700">Chana Beauty Lounge</text>
+  <text x="420" y="267" text-anchor="middle" class="body white" font-size="27" font-weight="600" letter-spacing="1">
+    HUIDVERBETERING · HEAD SPA · LASER
+  </text>
+  <text x="420" y="307" text-anchor="middle" class="body" fill="#f5e7bf" font-size="30" font-weight="700">
+    OPENING MEDIO OKTOBER 2026
+  </text>
+
+  <rect x="56" y="385" width="730" height="168" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="84" y="438" class="display olive" font-size="44" font-weight="700">Wat bieden wij aan?</text>
+  <text x="84" y="476" class="body muted" font-size="25">Gezichtsbehandelingen - Laserontharing - Wenkbrauwen</text>
+  <text x="84" y="510" class="body muted" font-size="25">Headspa - Arrangementen - Cadeaubonnen</text>
+  <text x="84" y="539" class="body gold" font-size="21" font-weight="700">Op afspraak, met persoonlijke aandacht en luxe sfeer</text>
+
+  <rect x="56" y="608" width="232" height="230" rx="26" fill="#ffffff" filter="url(#shadow)"/>
+  <image href="../picture/gezichtsbehandeling.png" x="56" y="608" width="232" height="230" preserveAspectRatio="xMidYMid slice" clip-path="url(#faceClip)"/>
+  <rect x="56" y="838" width="232" height="56" fill="#ffffff"/>
+  <text x="172" y="874" text-anchor="middle" class="body olive" font-size="22" font-weight="700">Gezichtsbehandeling</text>
+
+  <rect x="305" y="608" width="232" height="230" rx="26" fill="#ffffff" filter="url(#shadow)"/>
+  <image href="../picture/laserbehandeling.png" x="305" y="608" width="232" height="230" preserveAspectRatio="xMidYMid slice" clip-path="url(#laserClip)"/>
+  <rect x="305" y="838" width="232" height="56" fill="#ffffff"/>
+  <text x="421" y="874" text-anchor="middle" class="body olive" font-size="22" font-weight="700">Laserontharing</text>
+
+  <rect x="554" y="608" width="232" height="230" rx="26" fill="#ffffff" filter="url(#shadow)"/>
+  <image href="../picture/headspa.png" x="554" y="608" width="232" height="230" preserveAspectRatio="xMidYMid slice" clip-path="url(#headspaClip)"/>
+  <rect x="554" y="838" width="232" height="56" fill="#ffffff"/>
+  <text x="670" y="874" text-anchor="middle" class="body olive" font-size="22" font-weight="700">Headspa</text>
+
+  <rect x="56" y="930" width="730" height="183" rx="24" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="84" y="985" class="display olive" font-size="40" font-weight="700">Volg onze opening</text>
+  <text x="84" y="1022" class="body muted" font-size="24">Website: chanabeautylounge.nl</text>
+  <text x="84" y="1054" class="body muted" font-size="24">Instagram: @chanabeautylounge</text>
+  <text x="84" y="1086" class="body muted" font-size="24">WhatsApp: +31 6 00 00 00 00</text>
+
+  <rect x="547" y="973" width="212" height="112" rx="16" fill="#fff9f3" stroke="#dcc9a0" stroke-width="2"/>
+  <text x="653" y="1015" text-anchor="middle" class="body olive" font-size="19" font-weight="700">Scan voor website</text>
+  <rect x="618" y="1028" width="70" height="45" rx="8" fill="#ffffff" stroke="#dcc9a0"/>
+  <text x="653" y="1055" text-anchor="middle" class="body muted" font-size="14">QR</text>
+
+  <text x="420" y="1162" text-anchor="middle" class="body" fill="#8a877f" font-size="15">
+    Chana Beauty Lounge - A0 poster (841 x 1189 mm)
+  </text>
+</svg>

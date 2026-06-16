@@ -16,24 +16,44 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-lux page-contact">
     <a class="skip-link" href="#main">Naar inhoud</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="logo-link" href="index.html">
-          <img src="favicon-away-512x512 (1).png" width="200" height="80" alt="Chana Beauty Lounge" />
-          <span>Chana Beauty Lounge</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="site-nav" class="nav" aria-label="Hoofdmenu">
+    <div class="announce-bar">Opening medio oktober 2026 · Chana Beauty Lounge</div>
+    <header class="site-header site-header--lux">
+      <div class="container header-lux">
+        <div class="header-lux__brand">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="logo-link logo-link--lux" href="index.html">
+            <img
+              class="site-logo"
+              data-site-logo
+              src="logo-transparent.png"
+              width="320"
+              height="128"
+              alt="Chana Beauty Lounge"
+            />
+          </a>
+          <a class="btn btn--primary btn--header btn--header-compact" href="contact.html">Contact</a>
+        </div>
+        <div class="header-lux__nav">
+          <nav class="nav-lux" aria-label="Hoofdmenu">
+            <a href="index.html">Home</a>
+            <a href="behandelingen.html">Behandelingen</a>
+            <a href="arrangementen.html">Arrangementen</a>
+            <a href="over-ons.html">Over ons</a>
+            <a href="cadeaubon.html">Cadeaubon</a>
+          </nav>
+          <a class="btn btn--primary btn--header" href="contact.html">Contact</a>
+        </div>
+        <nav id="site-nav" class="nav" aria-label="Mobiel menu">
           <a href="index.html">Home</a>
           <a href="behandelingen.html">Behandelingen</a>
           <a href="arrangementen.html">Arrangementen</a>
@@ -48,74 +68,71 @@
     <main id="main">
       <div class="page-hero section--alt">
         <div class="container">
-          <p class="u-badge">Uitsluitend op afspraak</p>
-          <h1>Plan jouw moment van ontspanning</h1>
+          <p class="lux-kicker">Uitsluitend op afspraak</p>
+          <h1>Neem contact op</h1>
           <p>
             Contact is het startpunt — wij bevestigen persoonlijk je afspraak. Geen online agenda,
             geen automatische boeking.
-          </p>
-          <p class="u-muted" style="max-width: 52ch; margin-inline: auto">
-            Omdat wij op afspraak werken, kunnen wij alle aandacht en rust bieden die jij verdient.
           </p>
         </div>
       </div>
 
       <section class="section">
-        <div class="container" style="max-width: 720px">
-          <div class="card-grid card-grid--2" style="margin-bottom: 2rem">
-            <a class="card btn-row" href="#" data-wa style="text-align: center; text-decoration: none; color: inherit">
-              <h2 style="width: 100%; margin: 0">WhatsApp</h2>
-              <p style="margin: 0">Snelste manier — stuur je voorkeur of vraag.</p>
-              <span class="btn btn--whatsapp" style="width: 100%">Plan via WhatsApp</span>
-            </a>
-            <a
-              class="card btn-row"
-              href="#"
-              data-contact-tel
-              style="text-align: center; text-decoration: none; color: inherit"
-            >
-              <h2 style="width: 100%; margin: 0">Telefoon</h2>
-              <p style="margin: 0"><span data-contact-phone></span></p>
-              <span class="btn btn--primary" style="width: 100%">Bel ons</span>
-            </a>
-            <a
-              class="card btn-row"
-              data-email-card
-              href="#"
-              style="text-align: center; text-decoration: none; color: inherit"
-            >
-              <h2 style="width: 100%; margin: 0">E-mail</h2>
-              <p style="margin: 0; word-break: break-all" data-email-text></p>
-              <span class="btn btn--outline" style="width: 100%">Stuur een e-mail</span>
-            </a>
-            <a
-              class="card btn-row"
-              href="#"
-              data-contact-instagram
-              target="_blank"
-              rel="noopener noreferrer"
-              style="text-align: center; text-decoration: none; color: inherit"
-            >
-              <h2 style="width: 100%; margin: 0">Instagram</h2>
-              <p style="margin: 0">Volg ons voor sfeer en updates.</p>
-              <span class="btn btn--outline" style="width: 100%">Open Instagram</span>
-            </a>
-          </div>
+        <div class="container contact-channels">
+          <a class="contact-channel" href="#" data-wa>
+            <p class="lux-kicker">Snelste optie</p>
+            <h2>WhatsApp</h2>
+            <p>Stuur je voorkeur of vraag — we reageren zo snel mogelijk.</p>
+            <span class="btn btn--whatsapp contact-channel__btn">Plan via WhatsApp</span>
+          </a>
+          <a class="contact-channel" href="#" data-contact-tel>
+            <p class="lux-kicker">Bellen</p>
+            <h2>Telefoon</h2>
+            <p><span data-contact-phone></span></p>
+            <span class="btn btn--primary contact-channel__btn">Bel ons</span>
+          </a>
+          <a class="contact-channel" data-email-card href="#">
+            <p class="lux-kicker">Mailen</p>
+            <h2>E-mail</h2>
+            <p class="contact-channel__email" data-email-text></p>
+            <span class="btn btn--outline contact-channel__btn">Stuur een e-mail</span>
+          </a>
+          <a
+            class="contact-channel"
+            href="#"
+            data-contact-instagram
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p class="lux-kicker">Volg ons</p>
+            <h2>Instagram</h2>
+            <p>Blijf op de hoogte van sfeer en updates.</p>
+            <span class="btn btn--outline contact-channel__btn">Open Instagram</span>
+          </a>
+        </div>
+      </section>
 
-          <h2>Aanvraagformulier</h2>
-          <p class="u-muted">Vul in wat je wilt — dit is een aanvraag, geen definitieve afspraak.</p>
+      <section class="section section--alt">
+        <div class="container contact-form-wrap">
+          <div class="contact-form-intro">
+            <p class="lux-kicker">Aanvraag</p>
+            <h2>Afspraak aanvragen</h2>
+            <p>
+              Vul in wat je wilt — dit is een aanvraag, geen definitieve afspraak. We nemen
+              persoonlijk contact met je op.
+            </p>
+          </div>
 
           <div
             id="form-success"
             class="form-success"
             role="status"
             tabindex="-1"
-            style="margin: 1rem 0"
           >
             We nemen zo snel mogelijk contact met je op.
           </div>
 
-          <form id="aanvraag-form" class="form" style="margin-top: 1rem">
+          <form id="aanvraag-form" class="form contact-form">
             <div>
               <label for="naam">Naam</label>
               <input id="naam" name="naam" type="text" autocomplete="name" required />
@@ -154,14 +171,22 @@
                 <option value="Head spa luxe">Head spa luxe</option>
                 <option value="Head spa deluxe">Head spa deluxe</option>
                 <option value="Basis gezicht behandeling">Basis gezicht behandeling</option>
-                <option value="Relax gezicht behandeling met massage">Relax gezicht behandeling met massage</option>
-                <option value="Luxe gezicht behandeling met masker en massage">Luxe gezicht behandeling met masker en massage</option>
-                <option value="Ultra gezicht behandeling met masker, hand- en voetenmassage">Ultra gezicht behandeling met masker, hand- en voetenmassage</option>
+                <option value="Relax gezicht behandeling met massage">
+                  Relax gezicht behandeling met massage
+                </option>
+                <option value="Luxe gezicht behandeling met masker en massage">
+                  Luxe gezicht behandeling met masker en massage
+                </option>
+                <option value="Ultra gezicht behandeling met masker, hand- en voetenmassage">
+                  Ultra gezicht behandeling met masker, hand- en voetenmassage
+                </option>
                 <option value="Blow out föhnen">Blow out föhnen</option>
                 <option value="Krullen">Krullen</option>
                 <option value="Stijlen">Stijlen</option>
                 <option value="Behandelingen duo">Behandelingen duo</option>
-                <option value="Behandelingen duo met mini high tea">Behandelingen duo met mini high tea</option>
+                <option value="Behandelingen duo met mini high tea">
+                  Behandelingen duo met mini high tea
+                </option>
                 <option value="Zussen spa day">Zussen spa day</option>
                 <option value="Moeder dochter spa day">Moeder dochter spa day</option>
                 <option value="Vrienden spa day">Vrienden spa day</option>
@@ -180,20 +205,28 @@
             </div>
             <div>
               <label for="opmerking">Opmerking</label>
-              <textarea id="opmerking" name="opmerking" placeholder="Bijv. allergieën of wensen"></textarea>
+              <textarea
+                id="opmerking"
+                name="opmerking"
+                placeholder="Bijv. allergieën of wensen"
+              ></textarea>
             </div>
-            <button class="btn btn--primary" type="submit" style="justify-self: start">
-              Verstuur aanvraag
-            </button>
+            <button class="btn btn--primary" type="submit">Verstuur aanvraag</button>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--lux">
       <div class="container site-footer__grid">
-        <div>
-          <h3>Chana Beauty Lounge</h3>
+        <div class="site-footer__brand">
+          <img
+            data-site-logo
+            src="logo-transparent.png"
+            width="200"
+            height="80"
+            alt="Chana Beauty Lounge"
+          />
           <p>Huidverbetering, head spa &amp; luxe arrangementen — uitsluitend op afspraak.</p>
         </div>
         <div>
@@ -220,8 +253,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        © <span id="y"></span> Chana Beauty Lounge. Geen online boeking — alleen contact &amp;
-        beleving.
+        © <span id="y"></span> Chana Beauty Lounge
       </div>
     </footer>
 

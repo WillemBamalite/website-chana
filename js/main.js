@@ -346,6 +346,76 @@
     }
   }
 
+  function initHeroVideo() {
+    const video = document.querySelector("[data-hero-video]");
+    if (!video) return;
+
+    const poster = String(cfg.heroPoster || "").trim();
+    if (poster) video.setAttribute("poster", poster);
+
+    const local = String(cfg.heroVideo || "").trim();
+    const remote = String(cfg.heroVideoRemote || "").trim();
+
+    function tryPlay() {
+      const play = video.play();
+      if (play && typeof play.catch === "function") play.catch(() => {});
+    }
+
+    function setSource(src) {
+      if (!src) return;
+      video.innerHTML = "";
+      const source = document.createElement("source");
+      source.src = src;
+      source.type = "video/mp4";
+      video.appendChild(source);
+      video.load();
+      tryPlay();
+    }
+
+    async function boot() {
+      let src = remote;
+      if (local) {
+        try {
+          const res = await fetch(local, { method: "HEAD" });
+          if (res.ok) src = local;
+        } catch {
+          /* gebruik remote placeholder */
+        }
+      }
+      setSource(src);
+    }
+
+    video.addEventListener("loadeddata", tryPlay, { once: true });
+    boot();
+  }
+
+  function initLogo() {
+    const logo = String(cfg.logo || "").trim();
+    if (!logo) return;
+    document.querySelectorAll("[data-site-logo]").forEach((img) => {
+      img.src = logo;
+    });
+  }
+
+  function initScrollReveal() {
+    const els = document.querySelectorAll("[data-reveal]");
+    if (!els.length || !("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -30px 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+  }
+
   function initArrangementCards() {
     document.querySelectorAll("[data-arr-key]").forEach((card) => {
       card.addEventListener("click", () => {
@@ -357,6 +427,9 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initNav();
+    initLogo();
+    initHeroVideo();
+    initScrollReveal();
     initWaLinks();
     initContactInject();
     initForm();

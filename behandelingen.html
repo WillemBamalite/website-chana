@@ -16,24 +16,44 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-lux page-behandelingen">
     <a class="skip-link" href="#main">Naar inhoud</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="logo-link" href="index.html">
-          <img src="favicon-away-512x512 (1).png" width="200" height="80" alt="Chana Beauty Lounge" />
-          <span>Chana Beauty Lounge</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="site-nav" class="nav" aria-label="Hoofdmenu">
+    <div class="announce-bar">Opening medio oktober 2026 · Chana Beauty Lounge</div>
+    <header class="site-header site-header--lux">
+      <div class="container header-lux">
+        <div class="header-lux__brand">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="logo-link logo-link--lux" href="index.html">
+            <img
+              class="site-logo"
+              data-site-logo
+              src="logo-transparent.png"
+              width="320"
+              height="128"
+              alt="Chana Beauty Lounge"
+            />
+          </a>
+          <a class="btn btn--primary btn--header btn--header-compact" href="contact.html">Contact</a>
+        </div>
+        <div class="header-lux__nav">
+          <nav class="nav-lux" aria-label="Hoofdmenu">
+            <a href="index.html">Home</a>
+            <a href="behandelingen.html" aria-current="page">Behandelingen</a>
+            <a href="arrangementen.html">Arrangementen</a>
+            <a href="over-ons.html">Over ons</a>
+            <a href="cadeaubon.html">Cadeaubon</a>
+          </nav>
+          <a class="btn btn--primary btn--header" href="contact.html">Contact</a>
+        </div>
+        <nav id="site-nav" class="nav" aria-label="Mobiel menu">
           <a href="index.html">Home</a>
           <a href="behandelingen.html" aria-current="page">Behandelingen</a>
           <a href="arrangementen.html">Arrangementen</a>
@@ -51,8 +71,8 @@
           <p class="u-badge">Uitsluitend op afspraak</p>
           <h1>Behandelingen</h1>
           <p>
-            Ontdek onze behandelingen voor huidverbetering, laser, brows &amp; wax en head spa. Wij
-            werken op afspraak — zo kunnen wij alle aandacht en rust bieden die jij verdient.
+            Ontdek alle behandelingen van Chana Beauty Lounge: gezicht, laser, brows &amp; wax en
+            head spa. We werken op afspraak, zodat we echt de tijd voor je nemen.
           </p>
         </div>
       </div>
@@ -629,10 +649,16 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--lux">
       <div class="container site-footer__grid">
-        <div>
-          <h3>Chana Beauty Lounge</h3>
+        <div class="site-footer__brand">
+          <img
+            data-site-logo
+            src="logo-transparent.png"
+            width="200"
+            height="80"
+            alt="Chana Beauty Lounge"
+          />
           <p>Huidverbetering, head spa &amp; luxe arrangementen — uitsluitend op afspraak.</p>
         </div>
         <div>

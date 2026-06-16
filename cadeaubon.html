@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Cadeaubonnen en cadeaupakketten bij Chana Beauty Lounge — ook sieraden, kaarsen en bodyproducten."
+      content="Cadeaubonnen en cadeaupakketten bij Chana Beauty Lounge — geef rust en verzorging cadeau."
     />
     <title>Cadeaubon | Chana Beauty Lounge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,24 +16,44 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-lux page-cadeaubon">
     <a class="skip-link" href="#main">Naar inhoud</a>
-    <header class="site-header">
-      <div class="container site-header__inner">
-        <a class="logo-link" href="index.html">
-          <img src="favicon-away-512x512 (1).png" width="200" height="80" alt="Chana Beauty Lounge" />
-          <span>Chana Beauty Lounge</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="site-nav" class="nav" aria-label="Hoofdmenu">
+    <div class="announce-bar">Opening medio oktober 2026 · Chana Beauty Lounge</div>
+    <header class="site-header site-header--lux">
+      <div class="container header-lux">
+        <div class="header-lux__brand">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="logo-link logo-link--lux" href="index.html">
+            <img
+              class="site-logo"
+              data-site-logo
+              src="logo-transparent.png"
+              width="320"
+              height="128"
+              alt="Chana Beauty Lounge"
+            />
+          </a>
+          <a class="btn btn--primary btn--header btn--header-compact" href="contact.html">Contact</a>
+        </div>
+        <div class="header-lux__nav">
+          <nav class="nav-lux" aria-label="Hoofdmenu">
+            <a href="index.html">Home</a>
+            <a href="behandelingen.html">Behandelingen</a>
+            <a href="arrangementen.html">Arrangementen</a>
+            <a href="over-ons.html">Over ons</a>
+            <a href="cadeaubon.html" aria-current="page">Cadeaubon</a>
+          </nav>
+          <a class="btn btn--primary btn--header" href="contact.html">Contact</a>
+        </div>
+        <nav id="site-nav" class="nav" aria-label="Mobiel menu">
           <a href="index.html">Home</a>
           <a href="behandelingen.html">Behandelingen</a>
           <a href="arrangementen.html">Arrangementen</a>
@@ -48,51 +68,80 @@
     <main id="main">
       <div class="page-hero section--alt">
         <div class="container">
-          <p class="u-badge">Geef rust cadeau</p>
+          <p class="lux-kicker">Geef rust cadeau</p>
           <h1>Cadeaubonnen &amp; cadeaupakketten</h1>
           <p>
-            Geef een moment van ontspanning cadeau — warm, persoonlijk en altijd passend bij wie
-            even iets goeds verdient.
+            Geef een moment van ontspanning cadeau — warm, persoonlijk en altijd passend bij wie even
+            iets goeds verdient.
           </p>
         </div>
       </div>
 
       <section class="section">
-        <div class="container" style="max-width: 720px">
-          <h2>Cadeaubonnen</h2>
-          <p>
-            Kies een waarde of een specifieke beleving. De ontvanger plant daarna, op afspraak, een
-            moment dat past — wij denken graag mee over de juiste behandeling.
-          </p>
-          <h2>Cadeaupakketten</h2>
-          <p>
-            Wij stellen ook zorgvuldig samengestelde pakketten samen — luxe uitstraling, zachte
-            materialen en producten die passen bij onze spa-sfeer.
-          </p>
-          <h2>Producten in de lounge</h2>
-          <p class="u-muted">Een selectie items die mooi combineren met een cadeaumoment:</p>
-          <ul class="treatment-list" style="margin-top: 1rem">
-            <li>Sieraden</li>
-            <li>Kaarsen</li>
-            <li>Bodyproducten</li>
-          </ul>
-          <div class="notice" style="margin-top: 2rem">
-            <p style="margin: 0">
-              <strong>Let op:</strong> dit is geen webshop en geen automatische aankoop. Neem
-              contact op — dan adviseren wij persoonlijk over beschikbaarheid en opties.
+        <div class="container gift-options">
+          <article class="gift-card">
+            <p class="lux-kicker">Beleving</p>
+            <h2>Cadeaubonnen</h2>
+            <p>
+              Kies een waarde of een specifieke behandeling. De ontvanger plant daarna, op afspraak,
+              een moment dat past — wij denken graag mee.
+            </p>
+          </article>
+          <article class="gift-card">
+            <p class="lux-kicker">Samengesteld</p>
+            <h2>Cadeaupakketten</h2>
+            <p>
+              Zorgvuldig samengestelde pakketten met luxe uitstraling, zachte materialen en producten
+              die passen bij onze spa-sfeer.
+            </p>
+          </article>
+          <article class="gift-card">
+            <p class="lux-kicker">In de lounge</p>
+            <h2>Producten</h2>
+            <p>Een selectie items die mooi combineren met een cadeaumoment:</p>
+            <ul class="gift-card__list">
+              <li>Sieraden</li>
+              <li>Kaarsen</li>
+              <li>Bodyproducten</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container">
+          <div class="gift-notice">
+            <p>
+              <strong>Let op:</strong> dit is geen webshop. Neem contact op — dan adviseren we
+              persoonlijk over beschikbaarheid, waarde en mogelijkheden.
             </p>
           </div>
-          <div class="btn-row" style="margin-top: 2rem">
-            <a class="btn btn--outline" href="contact.html">Neem contact op</a>
+        </div>
+      </section>
+
+      <section class="section gift-cta">
+        <div class="container gift-cta__inner">
+          <h2>Cadeaubon bestellen?</h2>
+          <p>Stuur ons een bericht — we helpen je graag met de juiste keuze.</p>
+          <div class="btn-row gift-cta__actions">
+            <a class="btn btn--primary" href="contact.html">Neem contact op</a>
+            <a class="btn btn--outline btn--on-dark" href="#" data-wa>WhatsApp</a>
+            <a class="btn btn--ghost btn--on-dark" href="arrangementen.html">Bekijk arrangementen</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--lux">
       <div class="container site-footer__grid">
-        <div>
-          <h3>Chana Beauty Lounge</h3>
+        <div class="site-footer__brand">
+          <img
+            data-site-logo
+            src="logo-transparent.png"
+            width="200"
+            height="80"
+            alt="Chana Beauty Lounge"
+          />
           <p>Huidverbetering, head spa &amp; luxe arrangementen — uitsluitend op afspraak.</p>
         </div>
         <div>
@@ -118,8 +167,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        © <span id="y"></span> Chana Beauty Lounge. Geen online boeking — alleen contact &amp;
-        beleving.
+        © <span id="y"></span> Chana Beauty Lounge
       </div>
     </footer>
 
