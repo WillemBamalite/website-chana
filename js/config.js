@@ -16,13 +16,13 @@ window.CHANA_SITE = {
   /** Optioneel apart nummer voor bellen; anders wordt whatsappPhone gebruikt. */
   phoneTelDigits: "",
   phoneDisplay: "+31 6 00 00 00 00",
-  email: "hallo@chanabeautylounge.nl",
+  email: "info@chanabeautylounge.nl",
   instagramUrl: "https://www.instagram.com/",
   defaultWaText:
     "Hallo, ik wil graag een afspraak maken bij Chana Beauty Lounge.",
 
-  /** Logo op header en hero */
-  logo: "logo-transparent.png",
+  /** Logo op header en footer */
+  logo: "logo-transparent.png?v=3",
 
   /**
    * Hero-video: zet jullie eigen mp4 in video/hero-placeholder.mp4

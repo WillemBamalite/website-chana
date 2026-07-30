@@ -254,74 +254,103 @@
     const listEl = document.getElementById("arr-expect-list");
 
     const map = {
-      "behandelingen-duo": {
-        title: "Behandelingen duo",
+      "headspa-duo-basis": {
+        title: "Chana Headspa Duo — Basis",
         image: "arrangement%20pictures/Duoarrangement.png",
-        price: "Vanaf €149",
-        subtitle: "Samen ontspannen met persoonlijke aandacht",
+        price: "€180",
+        subtitle: "Samen de Signature Headspa Basis",
         description:
-          "Dit duo-arrangement is perfect voor twee personen die samen willen ontspannen en verzorgd willen worden in een rustige, luxe setting. We stemmen de invulling af op jullie wensen, zodat jullie allebei een behandeling krijgen die echt past.",
+          "Voor twee personen die samen willen ontspannen. Jullie beleven allebei de Signature Headspa Chana Basis — rust, hoofdhuidverzorging en een verzorgde finish in één gedeeld moment.",
         bullets: [
-          "Persoonlijke intake en afstemming per persoon",
-          "Duo-behandeling met focus op rust en comfort",
-          "Tijd om samen te ontspannen in een warme sfeer",
-          "Afsluiting met persoonlijk advies en nazorgtips",
+          "Signature Headspa Basis voor twee",
+          "Persoonlijke aandacht in een rustige setting",
+          "Focus op ontspanning en comfort",
+          "Vaste prijs: €180",
         ],
       },
-      "duo-high-tea": {
-        title: "Behandelingen duo met mini high tea",
-        image: "arrangement%20pictures/duohightea.png",
-        price: "Vanaf €179",
-        subtitle: "Luxe duo-moment met een smaakvolle afsluiting",
+      "headspa-duo-luxury": {
+        title: "Chana Headspa Duo — Luxury",
+        image: "arrangement%20pictures/Duoarrangement.png",
+        price: "€230",
+        subtitle: "Samen de Luxury Headspa",
         description:
-          "Voor wie net dat beetje extra wil: een verzorgend duo-arrangement gecombineerd met een mini high tea. Ideaal voor een bijzonder verwenmoment samen of als luxe cadeau-ervaring.",
+          "Een rijkere head spa-ervaring voor twee. Meer tijd, intensievere verzorging en een luxe afronding — ideaal om samen écht te landen.",
         bullets: [
-          "Persoonlijke duo-behandeling in een ontspannen setting",
-          "Zorg, rust en aandacht voor beide personen",
-          "Mini high tea als luxe en gezellige afsluiting",
+          "Chana Headspa Luxury voor twee",
+          "Uitgebreidere verzorging en massage",
+          "Luxe sfeer en persoonlijke begeleiding",
+          "Vaste prijs: €230",
+        ],
+      },
+      "headspa-duo-royal": {
+        title: "Chana Headspa Duo — Royal",
+        image: "arrangement%20pictures/Duoarrangement.png",
+        price: "€295",
+        subtitle: "Samen het Royal ritueel",
+        description:
+          "Het meest complete head spa-duo: Royal voor jullie allebei, inclusief De-Stress Facial. Maximale rust, intensieve verzorging en een premium finish.",
+        bullets: [
+          "Chana Royal Headspa voor twee (incl. De-Stress Facial)",
+          "Meest uitgebreide ritueel",
+          "Premium beleving van begin tot eind",
+          "Vaste prijs: €295",
+        ],
+      },
+      "royal-duo-high-tea": {
+        title: "Chana Royal Headspa Duo + styling + mini high tea",
+        image: "arrangement%20pictures/duohightea.png",
+        price: "€385",
+        subtitle: "Royal voor twee, styling naar keuze — afgesloten met mini high tea",
+        description:
+          "Royal Headspa voor twee personen (inclusief De-Stress Facial), plus styling naar keuze (Luxury blow out, Signature curls of Straight finish). We sluiten af met een Chana Mini High Tea — het complete verwenmoment van verzorging tot nagenieten.",
+        bullets: [
+          "Chana Royal Headspa voor twee (incl. De-Stress Facial)",
+          "Styling naar keuze: Luxury blow out, Signature curls of Straight finish",
+          "Afgesloten met Chana Mini High Tea",
           "Volledige beleving van ontvangst tot afronding",
+          "Vaste prijs: €385",
         ],
       },
       "zussen-spa-day": {
         title: "Zussen spa day",
         image: "arrangement%20pictures/zussenspa.png",
-        price: "Vanaf €149",
+        price: "€390",
         subtitle: "Een ontspannen dag om samen op te laden",
         description:
-          "De zussen spa day is ontworpen voor quality time met je zus: samen ontspannen, genieten en verzorgd worden in een rustige en luxe omgeving. Een dag waarin beleving en verbinding centraal staan.",
+          "De zussen spa day is een gepersonaliseerd duo-moment: samen ontspannen, genieten en verzorgd worden. We stemmen de invulling af op jullie wensen — van head spa tot combinaties.",
         bullets: [
           "Rustig ontvangst en persoonlijke begeleiding",
-          "Verzorgende behandelingen afgestemd op jullie wensen",
+          "Behandelingen afgestemd op jullie wensen",
           "Focus op ontspanning, verbinding en comfort",
-          "Een dag die echt voelt als samen opladen",
+          "Vaste prijs: €390",
         ],
       },
       "moeder-dochter-spa-day": {
         title: "Moeder dochter spa day",
         image: "arrangement%20pictures/moederdochterspa.png",
-        price: "Vanaf €149",
+        price: "€390",
         subtitle: "Een bijzonder moment van aandacht en verbinding",
         description:
-          "Dit arrangement draait om samen genieten en bewust vertragen. Een warme keuze voor moeder en dochter die een verzorgend, luxe en verbindend moment met elkaar willen beleven.",
+          "Een gepersonaliseerd duo-arrangement voor moeder en dochter. Samen vertragen, verzorgd worden en genieten in een warme, luxe setting.",
         bullets: [
           "Persoonlijke intake voor moeder en dochter",
           "Ontspannende en verzorgende behandeling op maat",
           "Luxe sfeer met focus op comfort en beleving",
-          "Een waardevol moment om samen te delen",
+          "Vaste prijs: €390",
         ],
       },
       "vrienden-spa-day": {
-        title: "Vrienden spa day",
+        title: "Vriendinnen spa day",
         image: "arrangement%20pictures/vriendenspa.png",
-        price: "Vanaf €149",
+        price: "€390",
         subtitle: "Samen genieten van een complete spa-beleving",
         description:
-          "Voor vriendinnen die een luxe en ontspannen uitje zoeken. De vrienden spa day combineert verzorging met gezelligheid, zodat jullie samen echt kunnen ontladen.",
+          "Voor vriendinnen die een luxe en ontspannen uitje zoeken. Een gepersonaliseerd duo-moment met verzorging en gezelligheid — precies zoals jullie het willen.",
         bullets: [
-          "Duo- of vriendenmoment met behandelingen op maat",
+          "Duo-moment met behandelingen op maat",
           "Ontspanning en verzorging in een warme setting",
           "Tijd voor quality time zonder haast",
-          "Een ervaring die je samen bijblijft",
+          "Vaste prijs: €390",
         ],
       },
     };
@@ -331,7 +360,7 @@
     const fromHash = (window.location.hash || "").replace("#", "").trim();
     const fromStore = sessionStorage.getItem("arrangementKey") || "";
     const key = fromQuery || fromHash || fromStore;
-    const data = map[key] || map["behandelingen-duo"];
+    const data = map[key] || map["headspa-duo-basis"];
 
     if (titleEl) titleEl.textContent = data.title;
     if (subtitleEl) subtitleEl.textContent = data.subtitle;

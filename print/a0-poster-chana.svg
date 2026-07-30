@@ -44,7 +44,7 @@
 
   <rect x="56" y="385" width="730" height="168" rx="24" fill="#ffffff" filter="url(#shadow)"/>
   <text x="84" y="438" class="display olive" font-size="44" font-weight="700">Wat bieden wij aan?</text>
-  <text x="84" y="476" class="body muted" font-size="25">Gezichtsbehandelingen - Laserontharing - Wenkbrauwen</text>
+  <text x="84" y="476" class="body muted" font-size="25">Gezichtsbehandelingen - Laserbehandelingen - Wenkbrauwen &amp; wimpers</text>
   <text x="84" y="510" class="body muted" font-size="25">Headspa - Arrangementen - Cadeaubonnen</text>
   <text x="84" y="539" class="body gold" font-size="21" font-weight="700">Op afspraak, met persoonlijke aandacht en luxe sfeer</text>
 
@@ -56,7 +56,7 @@
   <rect x="305" y="608" width="232" height="230" rx="26" fill="#ffffff" filter="url(#shadow)"/>
   <image href="../picture/laserbehandeling.png" x="305" y="608" width="232" height="230" preserveAspectRatio="xMidYMid slice" clip-path="url(#laserClip)"/>
   <rect x="305" y="838" width="232" height="56" fill="#ffffff"/>
-  <text x="421" y="874" text-anchor="middle" class="body olive" font-size="22" font-weight="700">Laserontharing</text>
+  <text x="421" y="874" text-anchor="middle" class="body olive" font-size="22" font-weight="700">Laserbehandelingen</text>
 
   <rect x="554" y="608" width="232" height="230" rx="26" fill="#ffffff" filter="url(#shadow)"/>
   <image href="../picture/headspa.png" x="554" y="608" width="232" height="230" preserveAspectRatio="xMidYMid slice" clip-path="url(#headspaClip)"/>
