@@ -143,36 +143,6 @@
     });
   }
 
-  function initForm() {
-    const form = document.getElementById("aanvraag-form");
-    const success = document.getElementById("form-success");
-    if (!form) return;
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      const lines = [
-        `Naam: ${fd.get("naam") || ""}`,
-        `Telefoon: ${fd.get("telefoon") || ""}`,
-        `E-mail: ${fd.get("email") || ""}`,
-        `Behandeling: ${fd.get("behandeling") || ""}`,
-        `Voorkeursdatum: ${fd.get("datum") || ""}`,
-        `Voorkeurstijd: ${fd.get("tijd") || ""}`,
-        `Opmerking: ${fd.get("opmerking") || ""}`,
-      ];
-      const subject = encodeURIComponent("Afspraakaanvraag — Chana Beauty Lounge");
-      const body = encodeURIComponent(lines.join("\n"));
-      const mail = cfg.email || "";
-      if (mail) {
-        window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
-      }
-      form.reset();
-      success?.classList.add("is-visible");
-      success?.setAttribute("tabindex", "-1");
-      success?.focus();
-    });
-  }
-
   function initTreatmentPage() {
     const page = document.querySelector('[data-page="behandelingen"]');
     if (!page) return;
@@ -461,7 +431,6 @@
     initScrollReveal();
     initWaLinks();
     initContactInject();
-    initForm();
     initTreatmentPage();
     initArrangementCards();
     initArrangementDetailPage();
