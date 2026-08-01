@@ -12,10 +12,10 @@ window.CHANA_SITE = {
   previewUser: "Chana",
   previewPass: "ChayHana03!",
 
-  whatsappPhone: "31600000000",
+  whatsappPhone: "31615720888",
   /** Optioneel apart nummer voor bellen; anders wordt whatsappPhone gebruikt. */
   phoneTelDigits: "",
-  phoneDisplay: "+31 6 00 00 00 00",
+  phoneDisplay: "+31 6 15 72 08 88",
   email: "info@chanabeautylounge.nl",
   instagramUrl: "https://www.instagram.com/",
   defaultWaText:
