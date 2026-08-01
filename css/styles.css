@@ -118,7 +118,7 @@ p {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 60;
   background: rgba(247, 244, 239, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(61, 79, 61, 0.08);
@@ -1765,7 +1765,7 @@ p {
 .site-header--lux {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 60;
   background: rgba(245, 239, 232, 0.98);
   border-bottom: 1px solid rgba(61, 79, 61, 0.1);
   overflow-x: clip;
@@ -1879,6 +1879,7 @@ p {
   top: calc(100% + 0.35rem);
   right: 0;
   left: auto;
+  z-index: 70;
 }
 
 @media (min-width: 900px) {
