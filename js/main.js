@@ -225,12 +225,12 @@
 
     const map = {
       "headspa-duo-basis": {
-        title: "Chana Headspa Duo — Basis",
+        title: "Chana Headspa Duo: Basis",
         image: "arrangement%20pictures/Duoarrangement.png",
         price: "€180",
         subtitle: "Samen de Signature Headspa Basis",
         description:
-          "Voor twee personen die samen willen ontspannen. Jullie beleven allebei de Signature Headspa Chana Basis — rust, hoofdhuidverzorging en een verzorgde finish in één gedeeld moment.",
+          "Voor twee personen die samen willen ontspannen. Jullie beleven allebei de Signature Headspa Chana Basis: rust, hoofdhuidverzorging en een verzorgde finish in één gedeeld moment.",
         bullets: [
           "Signature Headspa Basis voor twee",
           "Persoonlijke aandacht in een rustige setting",
@@ -239,12 +239,12 @@
         ],
       },
       "headspa-duo-luxury": {
-        title: "Chana Headspa Duo — Luxury",
+        title: "Chana Headspa Duo: Luxury",
         image: "arrangement%20pictures/Duoarrangement.png",
         price: "€230",
         subtitle: "Samen de Luxury Headspa",
         description:
-          "Een rijkere head spa-ervaring voor twee. Meer tijd, intensievere verzorging en een luxe afronding — ideaal om samen écht te landen.",
+          "Een rijkere head spa-ervaring voor twee. Meer tijd, intensievere verzorging en een luxe afronding, ideaal om samen écht te landen.",
         bullets: [
           "Chana Headspa Luxury voor twee",
           "Uitgebreidere verzorging en massage",
@@ -253,7 +253,7 @@
         ],
       },
       "headspa-duo-royal": {
-        title: "Chana Headspa Duo — Royal",
+        title: "Chana Headspa Duo: Royal",
         image: "arrangement%20pictures/Duoarrangement.png",
         price: "€295",
         subtitle: "Samen het Royal ritueel",
@@ -270,9 +270,9 @@
         title: "Chana Royal Headspa Duo + styling + mini high tea",
         image: "arrangement%20pictures/duohightea.png",
         price: "€385",
-        subtitle: "Royal voor twee, styling naar keuze — afgesloten met mini high tea",
+        subtitle: "Royal voor twee, styling naar keuze, afgesloten met mini high tea",
         description:
-          "Royal Headspa voor twee personen (inclusief De-Stress Facial), plus styling naar keuze (Luxury blow out, Signature curls of Straight finish). We sluiten af met een Chana Mini High Tea — het complete verwenmoment van verzorging tot nagenieten.",
+          "Royal Headspa voor twee personen (inclusief De-Stress Facial), plus styling naar keuze (Luxury blow out, Signature curls of Straight finish). We sluiten af met een Chana Mini High Tea, het complete verwenmoment van verzorging tot nagenieten.",
         bullets: [
           "Chana Royal Headspa voor twee (incl. De-Stress Facial)",
           "Styling naar keuze: Luxury blow out, Signature curls of Straight finish",
@@ -287,7 +287,7 @@
         price: "€390",
         subtitle: "Een ontspannen dag om samen op te laden",
         description:
-          "De zussen spa day is een gepersonaliseerd duo-moment: samen ontspannen, genieten en verzorgd worden. We stemmen de invulling af op jullie wensen — van head spa tot combinaties.",
+          "De zussen spa day is een gepersonaliseerd duo-moment: samen ontspannen, genieten en verzorgd worden. We stemmen de invulling af op jullie wensen, van head spa tot combinaties.",
         bullets: [
           "Rustig ontvangst en persoonlijke begeleiding",
           "Behandelingen afgestemd op jullie wensen",
@@ -315,7 +315,7 @@
         price: "€390",
         subtitle: "Samen genieten van een complete spa-beleving",
         description:
-          "Voor vriendinnen die een luxe en ontspannen uitje zoeken. Een gepersonaliseerd duo-moment met verzorging en gezelligheid — precies zoals jullie het willen.",
+          "Voor vriendinnen die een luxe en ontspannen uitje zoeken. Een gepersonaliseerd duo-moment met verzorging en gezelligheid, precies zoals jullie het willen.",
         bullets: [
           "Duo-moment met behandelingen op maat",
           "Ontspanning en verzorging in een warme setting",

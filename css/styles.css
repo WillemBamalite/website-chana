@@ -17,6 +17,7 @@
   --radius-lg: 26px;
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "Outfit", system-ui, sans-serif;
+  --font-script: "Allura", cursive;
   --max: 1120px;
   --header-h: 76px;
 }
@@ -1425,11 +1426,13 @@ p {
   border: none;
 }
 
-.about-story__quote p {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-  font-style: italic;
-  line-height: 1.45;
+.about-story__quote p,
+.about-story__copy .chl-quote p {
+  font-family: var(--font-script);
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
   color: var(--olive);
   margin: 0;
 }
@@ -1462,6 +1465,42 @@ p {
 .about-panel p {
   margin: 0;
   line-height: 1.65;
+}
+
+.salon-guest {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  padding: 2rem 1.6rem;
+  background: #fffcf8;
+  border: 1px solid rgba(61, 79, 61, 0.1);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.salon-guest h2 {
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.salon-guest p {
+  margin: 0 auto 1.35rem;
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+.chl-about__note {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 252, 248, 0.78);
+}
+
+.chl-about__note a {
+  color: var(--gold-soft);
+}
+
+.chl-about__note a:hover {
+  color: #fff;
 }
 
 .about-cta {
@@ -2409,10 +2448,11 @@ p {
 }
 
 .chl-quote p {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-  font-style: italic;
-  line-height: 1.45;
+  font-family: var(--font-script);
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
   color: rgba(255, 252, 248, 0.95);
 }
 

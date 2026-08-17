@@ -6,7 +6,7 @@ window.CHANA_SITE = {
   /**
    * Bouwfase: zet op false als de site openbaar live gaat.
    * Gebruikersnaam/wachtwoord staan hier voor het formulier; niet op het scherm getoond.
-   * (In publieke code is dit geen echte beveiliging — alleen een drempel.)
+   * (In publieke code is dit geen echte beveiliging, alleen een drempel.)
    */
   previewLock: true,
   previewUser: "Chana",
