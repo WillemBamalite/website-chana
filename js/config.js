@@ -8,7 +8,7 @@ window.CHANA_SITE = {
    * Gebruikersnaam/wachtwoord staan hier voor het formulier; niet op het scherm getoond.
    * (In publieke code is dit geen echte beveiliging, alleen een drempel.)
    */
-  previewLock: true,
+  previewLock: false,
   previewUser: "Chana",
   previewPass: "ChayHana03!",
 
