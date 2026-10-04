@@ -17,6 +17,11 @@ window.CHANA_SITE = {
   phoneTelDigits: "",
   phoneDisplay: "+31 6 15 72 08 88",
   email: "info@chanabeautylounge.nl",
+  addressLine1: "Vijfmeiweg 14",
+  addressLine2: "2172 VL Sassenheim",
+  addressDisplay: "Vijfmeiweg 14, 2172 VL Sassenheim",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Vijfmeiweg+14%2C+2172+VL+Sassenheim",
   instagramUrl: "https://www.instagram.com/",
   defaultWaText:
     "Hallo, ik wil graag een afspraak maken bij Chana Beauty Lounge.",

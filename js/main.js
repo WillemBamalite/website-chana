@@ -137,6 +137,17 @@
     document.querySelectorAll("[data-email-text]").forEach((n) => {
       n.textContent = cfg.email || "";
     });
+    document.querySelectorAll("[data-contact-address]").forEach((n) => {
+      n.textContent = cfg.addressDisplay || "";
+    });
+    document.querySelectorAll("a[data-contact-maps]").forEach((a) => {
+      const url = cfg.mapsUrl || "#";
+      a.setAttribute("href", url);
+      if (url && url !== "#") {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      }
+    });
     document.querySelectorAll("[data-contact-instagram]").forEach((n) => {
       const url = cfg.instagramUrl || "#";
       if (n.tagName === "A") n.href = url;

@@ -1652,6 +1652,126 @@ p {
   }
 }
 
+.contact-salon {
+  margin: 0;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  border-radius: 10px;
+  max-height: min(52vw, 480px);
+}
+
+@media (min-width: 700px) {
+  .contact-salon {
+    max-height: 520px;
+  }
+}
+
+.contact-salon img {
+  width: 100%;
+  height: 100%;
+  max-height: inherit;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.about-salon {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .about-salon {
+    grid-template-columns: 1fr 1.05fr;
+    gap: 3rem;
+  }
+}
+
+.about-salon__media {
+  margin: 0;
+}
+
+.about-salon__media img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid rgba(201, 169, 98, 0.35);
+}
+
+.about-salon__copy h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 0.85rem;
+}
+
+.about-salon__copy p {
+  line-height: 1.7;
+}
+
+.chl-salon__grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 900px) {
+  .chl-salon__grid {
+    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .chl-salon__item--wide {
+    grid-row: 1 / span 2;
+  }
+}
+
+.chl-salon__item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #2f3f2f;
+}
+
+.chl-salon__item img {
+  width: 100%;
+  height: clamp(220px, 38vw, 420px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+@media (min-width: 900px) {
+  .chl-salon__item--wide img {
+    height: 100%;
+    min-height: 520px;
+  }
+
+  .chl-salon__item:not(.chl-salon__item--wide) img {
+    height: clamp(240px, 24vw, 250px);
+  }
+}
+
+.chl-salon__item:hover img {
+  transform: scale(1.04);
+}
+
+.chl-salon__item figcaption {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.75rem;
+  margin: 0;
+  color: #fffcf8;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
 .contact-channel {
   display: flex;
   flex-direction: column;
