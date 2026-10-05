@@ -22,7 +22,7 @@ window.CHANA_SITE = {
   addressDisplay: "Vijfmeiweg 14, 2172 VL Sassenheim",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Vijfmeiweg+14%2C+2172+VL+Sassenheim",
-  instagramUrl: "https://www.instagram.com/",
+  instagramUrl: "https://www.instagram.com/chanabeautylounge/",
   defaultWaText:
     "Hallo, ik wil graag een afspraak maken bij Chana Beauty Lounge.",
 
