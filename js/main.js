@@ -87,10 +87,27 @@
       document.body.style.overflow = "hidden";
     }
 
-    toggle.addEventListener("click", () => {
+    let lastToggleAt = 0;
+    function toggleMenu(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const now = Date.now();
+      if (now - lastToggleAt < 350) return;
+      lastToggleAt = now;
       if (nav.classList.contains("is-open")) close();
       else open();
-    });
+    }
+
+    toggle.addEventListener("click", toggleMenu);
+    toggle.addEventListener(
+      "pointerup",
+      (e) => {
+        if (e.pointerType === "touch") toggleMenu(e);
+      },
+      { passive: false }
+    );
 
     overlay?.addEventListener("click", close);
 

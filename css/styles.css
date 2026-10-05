@@ -1927,24 +1927,28 @@ p {
   z-index: 60;
   background: rgba(245, 239, 232, 0.98);
   border-bottom: 1px solid rgba(61, 79, 61, 0.1);
-  overflow-x: clip;
+  overflow: visible;
 }
 
 .header-lux {
   position: relative;
   padding-block: 0;
   width: min(100% - 2rem, var(--max));
+  overflow: visible;
 }
 
 .header-lux__brand {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
-  gap: 0.75rem;
+  position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   padding: 0.9rem max(1rem, calc((100vw - var(--max)) / 2 + 1rem));
   background: #2f3f2f;
+  overflow: visible;
+  isolation: isolate;
 }
 
 .logo-link--lux {
@@ -1953,6 +1957,8 @@ p {
   z-index: 1;
   line-height: 0;
   text-decoration: none;
+  /* Logo mag visueel overlappen, maar mag tikken op iPhone niet stelen */
+  pointer-events: none;
 }
 
 .logo-link--lux .site-logo,
@@ -1965,6 +1971,7 @@ p {
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  pointer-events: none;
 }
 
 .header-lux__nav {
@@ -2012,15 +2019,22 @@ p {
 
 .btn--header-compact {
   display: inline-flex;
-  position: relative;
-  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: max(0.75rem, calc((100vw - var(--max)) / 2 + 0.75rem));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  min-height: 44px;
   padding: 0.55rem 0.85rem;
   font-size: 0.72rem;
-  background: transparent;
+  background: rgba(47, 63, 47, 0.92);
   color: rgba(255, 252, 248, 0.95);
   border: 1px solid rgba(220, 201, 160, 0.65);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  pointer-events: auto;
 }
 
 .btn--header-compact:hover {
@@ -2031,13 +2045,19 @@ p {
 
 .site-header--lux .nav-toggle {
   justify-self: start;
-  position: relative;
-  z-index: 5;
-  background: rgba(255, 252, 248, 0.12);
+  position: absolute;
+  left: max(0.75rem, calc((100vw - var(--max)) / 2 + 0.75rem));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  width: 48px;
+  height: 48px;
+  background: rgba(47, 63, 47, 0.92);
   box-shadow: none;
-  border: 1px solid rgba(255, 252, 248, 0.22);
+  border: 1px solid rgba(255, 252, 248, 0.35);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  pointer-events: auto;
 }
 
 .site-header--lux .nav-toggle span {
@@ -2064,6 +2084,12 @@ p {
   .header-lux__brand {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .logo-link--lux,
+  .logo-link--lux .site-logo,
+  .logo-link--lux img {
+    pointer-events: auto;
   }
 
   .btn--header-compact {
