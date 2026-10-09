@@ -36,39 +36,123 @@
         margin: 0 auto 1.25rem;
         color: var(--muted);
       }
-      .page-actie .actie-cat {
-        margin-bottom: 2.25rem;
+      .page-actie .actie-cats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        max-width: 40rem;
+        margin: 0 auto;
       }
-      .page-actie .actie-cat h2 {
-        font-size: 1.65rem;
-        margin-bottom: 0.85rem;
-        padding-bottom: 0.4rem;
-        border-bottom: 1px solid rgba(201, 169, 98, 0.35);
+      .page-actie .actie-cat {
+        background: var(--white);
+        border: 1px solid rgba(201, 169, 98, 0.28);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .page-actie .actie-cat__summary {
+        list-style: none;
+        cursor: pointer;
+        font-family: var(--font-display);
+        font-size: 1.45rem;
+        color: var(--olive);
+        padding: 1rem 1.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        user-select: none;
+      }
+      .page-actie .actie-cat__summary::-webkit-details-marker {
+        display: none;
+      }
+      .page-actie .actie-cat__summary::after {
+        content: "+";
+        font-family: var(--font-body);
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .page-actie .actie-cat[open] > .actie-cat__summary::after {
+        content: "−";
+      }
+      .page-actie .actie-cat__body {
+        padding: 0 1rem 1rem;
       }
       .page-actie .actie-list {
         display: flex;
         flex-direction: column;
-        gap: 0.55rem;
+        gap: 0.45rem;
       }
-      .page-actie .actie-item {
+      .page-actie .actie-treat {
+        border-bottom: 1px solid rgba(61, 79, 61, 0.08);
+      }
+      .page-actie .actie-treat:last-child {
+        border-bottom: none;
+      }
+      .page-actie .actie-treat--simple {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        gap: 1rem;
-        padding: 0.55rem 0;
-        border-bottom: 1px solid rgba(61, 79, 61, 0.08);
+        gap: 0.75rem;
+        padding: 0.75rem 0.15rem;
       }
-      .page-actie .actie-item--block {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0.85rem 0;
+      .page-actie .actie-treat > summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.75rem;
+        padding: 0.75rem 0.15rem;
+        user-select: none;
       }
-      .page-actie .actie-item__name {
-        font-weight: 500;
+      .page-actie .actie-treat > summary::-webkit-details-marker {
+        display: none;
+      }
+      .page-actie .actie-treat > summary::after {
+        content: "";
+        flex: 0 0 0.55rem;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-right: 2px solid var(--gold);
+        border-bottom: 2px solid var(--gold);
+        transform: rotate(45deg);
+        margin-left: 0.25rem;
+        align-self: center;
+        opacity: 0.85;
+      }
+      .page-actie .actie-treat[open] > summary::after {
+        transform: rotate(-135deg);
+        margin-top: 0.25rem;
+      }
+      .page-actie .actie-treat__name {
+        font-family: var(--font-display);
+        font-size: 1.22rem;
+        font-weight: 600;
+        color: var(--olive);
+        letter-spacing: 0.01em;
+        flex: 1;
+        min-width: 0;
+      }
+      .page-actie .actie-treat__hint {
+        font-size: 0.88rem;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .page-actie .actie-treat__hint .actie-price strong {
+        font-size: 0.95rem;
+      }
+      .page-actie .actie-treat__body {
+        padding: 0 0.15rem 0.85rem;
+      }
+      .page-actie .actie-treat[open] > summary .actie-treat__hint {
+        display: none;
       }
       .page-actie .actie-item__prices {
-        white-space: nowrap;
         text-align: right;
+        padding: 0.25rem 0;
       }
       .page-actie .actie-price s {
         color: var(--muted);
@@ -82,7 +166,6 @@
       .page-actie .actie-table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 0.5rem;
         font-size: 0.95rem;
       }
       .page-actie .actie-table th,
@@ -121,13 +204,16 @@
         margin-top: 1rem;
       }
       @media (max-width: 560px) {
-        .page-actie .actie-item:not(.actie-item--block) {
-          flex-direction: column;
-          gap: 0.25rem;
+        .page-actie .actie-treat > summary,
+        .page-actie .actie-treat--simple {
+          flex-wrap: wrap;
+          gap: 0.25rem 0.75rem;
+        }
+        .page-actie .actie-treat__hint {
+          white-space: normal;
         }
         .page-actie .actie-item__prices {
           text-align: left;
-          white-space: normal;
         }
       }
     </style>
@@ -172,15 +258,20 @@
 
         <section class="section">
           <div class="container">
+            <div class="actie-cats">
             
-        <section class="actie-cat" id="">
-          <h2>Gezichtsbehandelingen</h2>
-          
-          <div class="actie-list">
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Stop Time Relax Facial</span>
-          </div>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Gezichtsbehandelingen</summary>
+          <div class="actie-cat__body">
+            
+            <div class="actie-list">
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Stop Time Relax Facial</span>
+            <span class="actie-treat__hint"><span class="actie-price"><s>Vanaf €59,50</s> <strong>Vanaf €47,60</strong></span></span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Duur</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -188,15 +279,19 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Liftende Special Zones Facial</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€117,50</s> <strong>€94</strong></span></span>
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">De-Stress Facial</span>
           </div>
+        </details>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Liftende Special Zones Facial</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€117,50</s> <strong>€94</strong></span></span>
+        </div>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">De-Stress Facial</span>
+            <span class="actie-treat__hint"><span class="actie-price"><s>Vanaf €58,50</s> <strong>Vanaf €46,80</strong></span></span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Duur</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -204,11 +299,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Puberty Facial</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Puberty Facial</span>
+            <span class="actie-treat__hint"><span class="actie-price"><s>Vanaf €50</s> <strong>Vanaf €40</strong></span></span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Duur</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -216,11 +315,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Autumn / Winter Moisturizing Facial</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Autumn / Winter Moisturizing Facial</span>
+            <span class="actie-treat__hint"><span class="actie-price"><s>Vanaf €63,50</s> <strong>Vanaf €50,80</strong></span></span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Duur</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -228,11 +331,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Pregnancy Facial</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Pregnancy Facial</span>
+            <span class="actie-treat__hint"><span class="actie-price"><s>Vanaf €66,50</s> <strong>Vanaf €53,20</strong></span></span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Duur</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -240,32 +347,38 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Microneedling</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€125</s> <strong>€100</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Microneedling Luxe</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€149</s> <strong>€119,20</strong></span></span>
-        </div></div>
-        </section>
-        <section class="actie-cat" id="">
-          <h2>Laserbehandelingen</h2>
-          
-          <div class="actie-list">
-        <div class="actie-item">
-          <span class="actie-item__name">Carbon Peeling Basis</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€95</s> <strong>€76</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Hollywood Carbon Laser Peel</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€150</s> <strong>€120</strong></span></span>
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Laserontharing (diode)</span>
           </div>
+        </details>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Microneedling</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€125</s> <strong>€100</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Microneedling Luxe</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€149</s> <strong>€119,20</strong></span></span>
+        </div></div>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Laserbehandelingen</summary>
+          <div class="actie-cat__body">
+            
+            <div class="actie-list">
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Carbon Peeling Basis</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€95</s> <strong>€76</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Hollywood Carbon Laser Peel</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€150</s> <strong>€120</strong></span></span>
+        </div>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Laserontharing (diode)</span>
+            <span class="actie-treat__hint">Per zone</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -273,11 +386,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Pigmentvlek behandeling</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Pigmentvlek behandeling</span>
+            <span class="actie-treat__hint">Per zone</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -285,11 +402,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Laser tattoo removal</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Laser tattoo removal</span>
+            <span class="actie-treat__hint">Per formaat</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Formaat</th><th>Prijs</th></tr></thead>
             <tbody>
@@ -298,53 +419,61 @@
           </table>
           <p class="actie-note">Lidocaïne (verdoving): zonder inbegrepen · met voorbereiding
                       +<span class="actie-price"><s>€15</s> <strong>€12</strong></span> tot <span class="actie-price"><s>€25</s> <strong>€20</strong></span> per behandeling (afhankelijk van hoeveelheid en tijd).</p>
-        </div></div>
-        </section>
-        <section class="actie-cat" id="">
-          <h2>Wenkbrauwen &amp; wimpers</h2>
-          
-          <div class="actie-list">
-        <div class="actie-item">
-          <span class="actie-item__name">Shaping</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€25</s> <strong>€20</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Hybrid Dye</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€35</s> <strong>€28</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Brow Lamination</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€55</s> <strong>€44</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Lash lift</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€65</s> <strong>€52</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Lash tint</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€20</s> <strong>€16</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Lash lift + lash tint</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€75</s> <strong>€60</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Brow lamination + hybrid dye + shaping</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€75</s> <strong>€60</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Brow & lash signature package</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€120</s> <strong>€96</strong></span></span>
-        </div></div>
-        </section>
-        <section class="actie-cat" id="">
-          <h2>Body contouring</h2>
-          <p class="actie-zone-intro">Prijzen per zone Kleine zone Armen, knieën, onderbuik Medium zone Buik, taille, heupen Grote zone Bovenbenen, billen</p>
-          <div class="actie-list">
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Cavitatie</span>
           </div>
+        </details></div>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Wenkbrauwen &amp; wimpers</summary>
+          <div class="actie-cat__body">
+            
+            <div class="actie-list">
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Shaping</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€25</s> <strong>€20</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Hybrid Dye</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€35</s> <strong>€28</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Brow Lamination</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€55</s> <strong>€44</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Lash lift</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€65</s> <strong>€52</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Lash tint</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€20</s> <strong>€16</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Lash lift + lash tint</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€75</s> <strong>€60</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Brow lamination + hybrid dye + shaping</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€75</s> <strong>€60</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Brow & lash signature package</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€120</s> <strong>€96</strong></span></span>
+        </div></div>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Body contouring</summary>
+          <div class="actie-cat__body">
+            <p class="actie-zone-intro">Prijzen per zone Kleine zone Armen, knieën, onderbuik Medium zone Buik, taille, heupen Grote zone Bovenbenen, billen</p>
+            <div class="actie-list">
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Cavitatie</span>
+            <span class="actie-treat__hint">Zoneprijs</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>1×</th><th>Pakket 6×</th></tr></thead>
             <tbody>
@@ -352,11 +481,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">RF huidverstrakking</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">RF huidverstrakking</span>
+            <span class="actie-treat__hint">Zoneprijs</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>1×</th><th>Pakket 6×</th></tr></thead>
             <tbody>
@@ -364,11 +497,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">EMS body sculpting</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">EMS body sculpting</span>
+            <span class="actie-treat__hint">Zoneprijs</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>1×</th><th>Pakket 6×</th></tr></thead>
             <tbody>
@@ -376,11 +513,15 @@
             </tbody>
           </table>
           
-        </div>
-        <div class="actie-item actie-item--block">
-          <div class="actie-item__head">
-            <span class="actie-item__name">Body contouring combi</span>
           </div>
+        </details>
+        <details class="actie-treat">
+          <summary>
+            <span class="actie-treat__name">Body contouring combi</span>
+            <span class="actie-treat__hint">Zoneprijs</span>
+          </summary>
+          <div class="actie-treat__body">
+            
           <table class="actie-table">
             <thead><tr><th>Zone</th><th>1×</th><th>Pakket 6×</th></tr></thead>
             <tbody>
@@ -388,78 +529,87 @@
             </tbody>
           </table>
           
+          </div>
+        </details></div>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Head spa</summary>
+          <div class="actie-cat__body">
+            
+            <div class="actie-list">
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Signature Headspa Chana Basis</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€95</s> <strong>€76</strong></span> · 60 min</span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Headspa Luxury</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€135</s> <strong>€108</strong></span> · 75 min</span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Royal Headspa</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€165</s> <strong>€132</strong></span> · 90 min</span>
         </div></div>
-        </section>
-        <section class="actie-cat" id="">
-          <h2>Head spa</h2>
-          
-          <div class="actie-list">
-        <div class="actie-item">
-          <span class="actie-item__name">Signature Headspa Chana Basis</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€95</s> <strong>€76</strong></span> · 60 min</span>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Styling opties</summary>
+          <div class="actie-cat__body">
+            
+            <div class="actie-list">
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Luxury blow out</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€39</s> <strong>€31,20</strong></span></span>
         </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Headspa Luxury</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€135</s> <strong>€108</strong></span> · 75 min</span>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Signature curls</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€49</s> <strong>€39,20</strong></span></span>
         </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Royal Headspa</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€165</s> <strong>€132</strong></span> · 90 min</span>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Straight finish</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€39</s> <strong>€31,20</strong></span></span>
         </div></div>
-        </section>
-        <section class="actie-cat" id="">
-          <h2>Styling opties</h2>
-          
-          <div class="actie-list">
-        <div class="actie-item">
-          <span class="actie-item__name">Luxury blow out</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€39</s> <strong>€31,20</strong></span></span>
+          </div>
+        </details>
+        <details class="actie-cat">
+          <summary class="actie-cat__summary">Arrangementen</summary>
+          <div class="actie-cat__body">
+            <div class="actie-list">
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Headspa Duo: Basis</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€180</s> <strong>€144</strong></span></span>
         </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Signature curls</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€49</s> <strong>€39,20</strong></span></span>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Headspa Duo: Luxury</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€230</s> <strong>€184</strong></span></span>
         </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Straight finish</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€39</s> <strong>€31,20</strong></span></span>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Headspa Duo: Royal</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€295</s> <strong>€236</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Royal Headspa Duo + styling + mini high tea</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€385</s> <strong>€308</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Zussen spa day</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Moeder dochter spa day</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Vriendinnen spa day</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
+        </div>
+        <div class="actie-treat actie-treat--simple">
+          <span class="actie-treat__name">Chana Mini High Tea</span>
+          <span class="actie-treat__hint"><span class="actie-price"><s>€24,50</s> <strong>€19,60</strong></span> p.p.</span>
         </div></div>
-        </section>
-        <section class="actie-cat" id="arrangementen">
-          <h2>Arrangementen</h2>
-          <div class="actie-list">
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Headspa Duo: Basis</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€180</s> <strong>€144</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Headspa Duo: Luxury</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€230</s> <strong>€184</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Headspa Duo: Royal</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€295</s> <strong>€236</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Royal Headspa Duo + styling + mini high tea</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€385</s> <strong>€308</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Zussen spa day</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Moeder dochter spa day</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Vriendinnen spa day</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€390</s> <strong>€312</strong></span></span>
-        </div>
-        <div class="actie-item">
-          <span class="actie-item__name">Chana Mini High Tea</span>
-          <span class="actie-item__prices"><span class="actie-price"><s>€24,50</s> <strong>€19,60</strong></span> p.p.</span>
-        </div></div>
-        </section>
+          </div>
+        </details>
+            </div>
             <div class="actie-cta" style="margin-top: 2rem">
               <a class="btn btn--primary" href="#" data-wa data-wa-text="Hallo, ik wil graag gebruikmaken van de openingsactie (20% korting) en een afspraak maken.">Boek via WhatsApp</a>
             </div>
