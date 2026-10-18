@@ -283,7 +283,7 @@
       "headspa-duo-royal": {
         title: "Chana Headspa Duo: Royal",
         image: "arrangement%20pictures/Duoarrangement.png",
-        price: "€295",
+        price: "€250",
         subtitle: "Samen het Royal ritueel",
         description:
           "Het meest complete head spa-duo: Royal voor jullie allebei, inclusief De-Stress Facial. Maximale rust, intensieve verzorging en een premium finish.",
@@ -291,28 +291,13 @@
           "Chana Royal Headspa voor twee (incl. De-Stress Facial)",
           "Meest uitgebreide ritueel",
           "Premium beleving van begin tot eind",
-          "Vaste prijs: €295",
-        ],
-      },
-      "royal-duo-high-tea": {
-        title: "Chana Royal Headspa Duo + styling + mini high tea",
-        image: "arrangement%20pictures/duohightea.png",
-        price: "€385",
-        subtitle: "Royal voor twee, styling naar keuze, afgesloten met mini high tea",
-        description:
-          "Royal Headspa voor twee personen (inclusief De-Stress Facial), plus styling naar keuze (Luxury blow out, Signature curls of Straight finish). We sluiten af met een Chana Mini High Tea, het complete verwenmoment van verzorging tot nagenieten.",
-        bullets: [
-          "Chana Royal Headspa voor twee (incl. De-Stress Facial)",
-          "Styling naar keuze: Luxury blow out, Signature curls of Straight finish",
-          "Afgesloten met Chana Mini High Tea",
-          "Volledige beleving van ontvangst tot afronding",
-          "Vaste prijs: €385",
+          "Vaste prijs: €250",
         ],
       },
       "zussen-spa-day": {
         title: "Zussen spa day",
         image: "arrangement%20pictures/zussenspa.png",
-        price: "€390",
+        price: "€285",
         subtitle: "Een ontspannen dag om samen op te laden",
         description:
           "De zussen spa day is een gepersonaliseerd duo-moment: samen ontspannen, genieten en verzorgd worden. We stemmen de invulling af op jullie wensen, van head spa tot combinaties.",
@@ -320,13 +305,13 @@
           "Rustig ontvangst en persoonlijke begeleiding",
           "Behandelingen afgestemd op jullie wensen",
           "Focus op ontspanning, verbinding en comfort",
-          "Vaste prijs: €390",
+          "Vaste prijs: €285",
         ],
       },
       "moeder-dochter-spa-day": {
         title: "Moeder dochter spa day",
         image: "arrangement%20pictures/moederdochterspa.png",
-        price: "€390",
+        price: "€285",
         subtitle: "Een bijzonder moment van aandacht en verbinding",
         description:
           "Een gepersonaliseerd duo-arrangement voor moeder en dochter. Samen vertragen, verzorgd worden en genieten in een warme, luxe setting.",
@@ -334,13 +319,13 @@
           "Persoonlijke intake voor moeder en dochter",
           "Ontspannende en verzorgende behandeling op maat",
           "Luxe sfeer met focus op comfort en beleving",
-          "Vaste prijs: €390",
+          "Vaste prijs: €285",
         ],
       },
       "vrienden-spa-day": {
         title: "Vriendinnen spa day",
         image: "arrangement%20pictures/vriendenspa.png",
-        price: "€390",
+        price: "€285",
         subtitle: "Samen genieten van een complete spa-beleving",
         description:
           "Voor vriendinnen die een luxe en ontspannen uitje zoeken. Een gepersonaliseerd duo-moment met verzorging en gezelligheid, precies zoals jullie het willen.",
@@ -348,7 +333,7 @@
           "Duo-moment met behandelingen op maat",
           "Ontspanning en verzorging in een warme setting",
           "Tijd voor quality time zonder haast",
-          "Vaste prijs: €390",
+          "Vaste prijs: €285",
         ],
       },
     };
